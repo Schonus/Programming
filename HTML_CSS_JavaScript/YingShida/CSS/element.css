@@ -53,4 +53,23 @@
     width: 100%;
     height: 200px;
 }
-
+li{
+    list-style-type: none;
+}
+.Footmenu{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.footmenu ul li{
+    font-weight: bold;
+}
+.footmenu ul li a{
+    color: #fff;
+    font-weight: lighter;
+}
+.footmenu{
+    display: inline-block;
+    line-height: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
