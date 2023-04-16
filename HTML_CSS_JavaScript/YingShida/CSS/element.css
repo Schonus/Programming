@@ -1,8 +1,9 @@
-#logo
+#logo/*图标样式*/
 {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    float: left;
 }
-#title{
-    display: inline-block;
+#title{/*图标样式*/
+    font-size: 30px;
 }

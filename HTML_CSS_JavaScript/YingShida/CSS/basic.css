@@ -1,9 +1,15 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: "Microsoft YaHei","SimHei","STHeiti","STSong";
 }
 .container{
     margin: 0 auto;
-    width: 800px;
+    min-width: 800px;
+    max-width: 1400px;
     border: 1px black solid;
 }
+.pageheader{
+    position: fixed;
+}
+
