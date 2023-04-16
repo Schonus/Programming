@@ -1,4 +1,7 @@
-
+#logo_container{
+    float: left;
+    width: 600px;
+}
 #logo/*图标样式*/
 {
     width: 60px;
@@ -17,4 +20,14 @@
 #basic_contact{
     border: 1px solid black;
     float: right;
+    width: 398px;
+}
+.basic_info_pic{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.basic_info{
+    display: inline;
+    vertical-align: top;
 }
