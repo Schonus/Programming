@@ -1,9 +1,20 @@
+
 #logo/*图标样式*/
 {
     width: 60px;
     height: 60px;
-    float: left;
+    position: relative;/*固定在左上角*/
 }
 #title{/*图标样式*/
+    display: inline-block;/*防止走形*/
     font-size: 30px;
+    vertical-align: top;/*字体往上跑*/
+}
+#title_description{/*图标样式*/
+    font-size: 1rem;/*初始字体大小*/
+    font-weight: lighter;/*设置宽度*/
+}
+#basic_contact{
+    border: 1px solid black;
+    float: right;
 }

@@ -1,15 +1,20 @@
-*{
+*{/*默认属性*/
     padding: 0px;
     margin: 0px;
-    font-family: "Microsoft YaHei","SimHei","STHeiti","STSong";
+    font-size: 20px;/*预设字体大小*/
+    font-family: "Microsoft YaHei","SimHei","STHeiti","STSong";/*预设字体*/
 }
-.container{
-    margin: 0 auto;
-    min-width: 800px;
-    max-width: 1400px;
-    border: 1px black solid;
+.container{/*窗体属性*/
+    margin: 0 auto;/*居中*/
+    min-width: 800px;/*最小页面宽度*/
+    max-width: 1400px;/*最大页面宽度*/
+    height: 3000px;
 }
 .pageheader{
-    position: fixed;
+    position: fixed;/*页头随网页浮动*/
+    width: 100%;
 }
+.header_top{
+    margin-bottom: 20px;
 
+}
