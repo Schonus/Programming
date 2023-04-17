@@ -1,6 +1,6 @@
 #logo_container{
     float: left;
-    width: 600px;
+    width: 580px;
 }
 #logo/*图标样式*/
 {
@@ -19,7 +19,7 @@
 }
 #basic_contact{
     float: right;
-    width: 400px;
+    width: 320px;
 }
 .basic_info_pic{
     width: 30px;
@@ -33,7 +33,7 @@
 .menu-list
 {
     display: inline-block;
-    margin: 10px 2%;
+    margin: 10px 1%;
     width: 10%;
     min-width: 150px;
     vertical-align: middle;
@@ -56,6 +56,31 @@
 li{
     list-style-type: none;
 }
+#display_01,#display_02,#display_03{
+    display: inline-block;
+    
+}
+#display_02,#display_03{
+    margin-left: 0.5%;
+}
+#picture1{
+    border: 1px solid black;
+    width: 40%;
+    height: 300px;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+#picture1_description{
+    width: 45%;
+    float: right;
+    margin: 2% 5%;
+}
+#picture2,#picture3,#picture4{
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
 .Footmenu{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -70,6 +95,6 @@ li{
 .footmenu{
     display: inline-block;
     line-height: 40px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 8%;
+    margin-right: 8%;
 }
