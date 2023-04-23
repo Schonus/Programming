@@ -101,3 +101,76 @@
 
 /* #endregion主导航end */
 
+/* #region头部start */
+
+.main-content {
+    margin-top: 10px;
+}
+.main-content .slide-nav {
+    width: 190px;
+    height: 458px;
+    background-color: #F4F4F4;
+    position: relative;
+}
+.main-content .slide-nav li {
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 16px;
+
+}
+.main-content .slide-nav li:hover {
+    background-color: #DD302D;
+}
+
+.main-content .slide-nav li:hover>a {
+    color: white;
+}
+.second-menu{
+    width: 680px;
+    height: 448px;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    left: 190px;
+    padding-top: 10px;
+    padding-left: 20px;
+    display: none;
+}
+.main-content .slide-nav li:hover .second-menu{
+    display: block;
+}
+.second-menu dl{
+    height: 36px;
+    line-height: 36px;
+
+}
+.second-menu dt{
+    float: left;
+    width: 70px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.second-menu dd{
+    float: left;
+}
+.second-menu dd a{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: 1px solid #666;
+}
+.second-menu a{
+    color: #000;
+}
+.main-content .banner {
+    width: 690px;
+    height: 458px;
+    background-color: green;
+    margin: 0 10px;
+}
+.main-content .slide-other {
+    background-color: blue;
+    width: 290px;
+    height: 458px;
+}
+/* #endregion头部end*/
