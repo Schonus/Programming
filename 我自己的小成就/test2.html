@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小工具</title>
+    <style>
+        *{
+            padding: 0;
+            font-size: 14px;
+        }
+        .container
+        {
+            min-width: 400px;
+            max-width: 1600px;
+            width: 90%;
+            margin: 0 auto;
+            /* border: 1px solid black; */
+            
+        }
+        #basic_info{
+            margin: 0 auto;
+        }
+        .excel{
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+            /* border: 1px; */
+        }
+        .excel td{
+            border: 1px solid #ccc;
+        }
+        .excel input,.excel textarea{
+            width: 100%;
+            border: none;
+            height: 50px;
+            font-size: 150%;
+            cursor: text;
+        }
+        #special_input{
+            width: 5%;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 20%;
+            vertical-align: middle;
+        }
+        .excel thead{
+            background-image: linear-gradient(#0011ff,#000fe2,#0011ff);
+            color: white;
+            vertical-align: middle;
+        }
+        .excel tbody .first_cell{
+            background-color: skyblue;
+            width: 20%;
+            font-size: 16px;
+            border: none;
+            transition: all linear 0.25s;
+        }
+        .excel tbody .first_cell:hover{
+            background-color: yellowgreen;
+        }
+        #basic_info button{
+            width: 20%;
+            height: 30px;
+            font-size: 20px;
+        }
+        #info_sender{
+            margin-right: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="basic_info">
+            <table class="excel" cellspacing="0">
+                <caption>收集数据</caption>
+                <thead>
+                    <tr>
+                        <th class="first_cell">填写项</th>
+                        <th>数据</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first_cell">管道名称</td>
+                        <td><input type="text" name="i1" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">单位内编号</td>
+                        <td><input type="text" name="i2" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">管道级别</td>
+                        <td><input type="text" name="i3" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">起始位置</td>
+                        <td><input type="text" name="i4" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">终止位置</td>
+                        <td><input type="text" name="i5" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">使用单位名称</td>
+                        <td><input type="text" name="i6" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">使用登记证编号</td>
+                        <td><input type="text" name="i7" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">使用单位地址</td>
+                        <td><input type="text" name="i8" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">使用单位统一社会信用代码</td>
+                        <td><input type="text" name="i9" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">邮政编码</td>
+                        <td><input type="text" name="i10" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">安全管理人员</td>
+                        <td><input type="text" name="i11" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">联系电话</td>
+                        <td><input type="text" name="i12" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">设计使用年限</td>
+                        <td><input type="text" name="i13" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">投入使用日期</td>
+                        <td><input type="text" name="i14" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">检验依据</td>
+                        <td><input type="text" name="i15" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">问题</td>
+                        <td><input type="text" name="i16" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">处理</td>
+                        <td><input type="text" name="i17" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">管道直径(mm)</td>
+                        <td><input type="text" name="i18" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">管道长度(m)</td>
+                        <td><input type="text" name="i19" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">管道壁厚(mm)</td>
+                        <td><input type="text" name="i20" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">设计压力(MPa)</td>
+                        <td><input type="text" name="i21" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">设计温度(℃)</td>
+                        <td><input type="text" name="i22" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">工作压力(MPa)</td>
+                        <td><input type="text" name="i23" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">工作温度(℃)</td>
+                        <td><input type="text" name="i24" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell" colspan="2">工业管道的安全状况等级评定为 <input type="text" name="i25" id="special_input"> 级</td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">压力</td>
+                        <td><input type="text" name="i26" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">温度</td>
+                        <td><input type="text" name="i27" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">介质</td>
+                        <td><input type="text" name="i28" id=""></td>
+                    </tr>
+                    <tr>
+                        <td class="first_cell">下次定期检验时间：</td>
+                        <td><input type="text" name="i29" id=""></td>
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                <button id="info_sender">提交</button>
+                                <button type="reset">重置</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <script type="text/javascript">
+        saveAsExcel("form","form")
+        function saveAsExcel(HeadName, DivName) {
+            var s = "<center>" + HeadName + "</center>" + "\r\n";
+            s += DivName.innerHTML;
+            var xlsWindow = window.open("", "_blank", "width=1,height=1,scrollbars=no,toolbar=no");
+            xlsWindow.document.write(s);
+            xlsWindow.document.close();
+            xlsWindow.document.execCommand('Saveas', true, '%homeDrive%\\Data.xls')
+            xlsWindow.close();
+        }
+    </script>
+</body>
+</html>
