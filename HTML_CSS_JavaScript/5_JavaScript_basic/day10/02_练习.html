@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>返回值</title>
+    <script type="text/javascript">
+        const PAI=3.141592653;
+        function isEven(num){
+            return !(num%2);
+        }
+        result = isEven(28);
+        document.writeln(result);
+
+        //输出一个半径的圆的面积
+        function Area(radius){
+            return radius*radius*PAI;
+        }
+        result=Area(100);
+        document.writeln(result);
+
+        //输出一个人的信息
+        function person_info(person_info){
+            console.log("Hi! I'm " + person_info.name + ", I'm " + person_info.age + " years old, I'm a " + person_info.gender +". I come from " + person_info.homeland + ", And last, I'm a " + person_info.personality + " person.\n");
+        }
+        var Mikey_info={
+            name:"Mikey",
+            gender:"Male",
+            age:24,
+            personality:"Brave",
+            homeland:"Italiy"
+        }
+        person_info(Mikey_info);
+
+        function fun(f){
+            document.writeln(f);
+        }
+        fun(person_info);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

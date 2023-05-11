@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script type="text/javascript">
+        var index_add=function(i){
+            console.log("我是第" + i++ + "行\n");
+            return i;
+        }
+        for(var i=1;i<4;)
+        {
+            i=index_add(i);
+        }
+        function fun2(){
+            console.log("This is my second function!");
+        }
+        console.log(fun2)
+        fun2()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
