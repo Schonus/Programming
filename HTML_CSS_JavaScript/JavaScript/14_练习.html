@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			var err = new Array;
+			var arrnumber = new Array;
+			var arr = [1,6,3,2,1,3,9,2,5];
+			arr.forEach(function(value,index) {
+				if(!arrnumber[value])
+				{
+					arrnumber[value]=1;
+				}
+				else{
+					err.unshift(index);
+				};
+			});
+			arrnumber.forEach(function(value,index){
+				if(value){document.writeln(index+" ");}
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
