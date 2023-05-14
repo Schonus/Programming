@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+    <script type="text/javascript">
+        function fun() {
+            console.log(this.name);
+        }
+        fun();
+        var obj = {
+            name: "孙悟空",
+            sayName: fun
+        }
+        console.log(fun==obj.sayName)
+        obj.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

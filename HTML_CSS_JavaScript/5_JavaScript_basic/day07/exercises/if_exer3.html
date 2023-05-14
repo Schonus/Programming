@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>流程控制语句</title>
+    <script type="text/javascript">
+    var num1 = +prompt('Num1：',160) , 
+        num2 = +prompt('Num2：',160) , 
+        num3 = +prompt('Num3：',160) ;
+        num_1 = Math.max(num1,num2,num3);
+        num_3 = Math.min(num1,num2,num3);
+        num_2 = num1 + num2 + num3 - (num1 * (num1 == num_1) + num2 * (num2 == num_1) + num3 * (num3 == num_1)) - (num1 * (num1 == num_3) + num2 * (num2 == num_3) + num3 * (num3 == num_3));
+        alert(num_1);    
+        alert(num_2);    
+        alert(num_3);    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

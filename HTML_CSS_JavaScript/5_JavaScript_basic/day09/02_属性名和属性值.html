@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>属性名和属性值</title>
+    <script type="text/javascript">
+        var obj=new Object();
+        obj.var = "hello";
+        console.log(obj.var);
+        var obj2 = new Object();
+        obj2.name = "猪八戒";
+        obj.test = obj2;
+        console.log(obj.test.name);
+        console.log("name" in obj);
+        console.log("name" in obj.test);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

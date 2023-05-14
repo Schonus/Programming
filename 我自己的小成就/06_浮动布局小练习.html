@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>06_浮动布局小练习</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+            text-align:center;
+
+        }
+        body{
+            font-size: 20px;
+            font-family: "STSong","STXingkai","STheiti","BiauKai";
+        }
+        .container{
+            margin: 0px auto;
+            width: 960px;
+        }
+        .pagehead,.menu,.pagebody,.body-left,.body-right,.pagefoot{
+            overflow: hidden;
+        }
+        #logo,#banner1,#banner2
+        {
+            height: 78px;
+            border: 1px solid black;
+            background-color: red;
+            float: left;
+            margin: 0px;
+        }
+        #banner2{
+            float: right;
+        }
+        .pagehead::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #logo{
+            width: 198px;
+            margin-right: 10px;
+        }
+        #banner1{
+            width: 538px;
+            margin-right: 10px;
+        }
+        #banner2{
+            width: 198px;
+        }
+        .menu
+        {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 30px;
+            background-color: green;
+            text-align: center;
+        }
+        .body-left{
+            width: 750px;
+            margin-right: 10px;
+            float: left;
+        }
+        .body-right
+        {
+            width: 200px;
+            float: right;
+        }
+        .body-left::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #lanmu1,#lanmu2,#lanmu3,#lanmu4,#lanmu5,#lanmu6{
+            border: 1px solid black;
+            background-color: pink;
+            float: left;
+        }
+        #lanmu1,#lanmu2{
+            width: 368px;
+            height: 198px;
+            margin-bottom: 10px;
+        }
+        #lanmu1{
+            margin-right: 10px;
+        }
+        #lanmu3,#lanmu4,#lanmu5,#lanmu6{
+            width: 178px;
+            height: 198px;
+        }
+        #lanmu3,#lanmu4,#lanmu5{
+            margin-right: 10px;
+        }
+        #lanmu7,#lanmu8,#lanmu9{
+            width: 198px;
+            height: 128px;
+            border: 1px solid black;;
+            background-color: aqua;
+        }
+        #lanmu7,#lanmu8{
+            margin-bottom: 10px;
+        }
+        .pagefoot{
+            height: 60px;
+            margin-top: 10px;
+            background-color: blue;
+            line-height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pagehead">
+            <div id="logo"><img src="" alt="logo"></div>
+            <div id="banner1"></div>
+            <div id="banner2"></div>
+        </div>
+        <div class="menu">
+            <span>menu</span>
+        </div>
+        <div class="pagebody">
+            <div class="body-left">
+                <div id="lanmu1"></div>
+                <div id="lanmu2"></div>
+                <div id="lanmu3"></div>
+                <div id="lanmu4"></div>
+                <div id="lanmu5"></div>
+                <div id="lanmu6"></div>
+            </div>
+            <div class="body-right">
+                <div id="lanmu7"></div>
+                <div id="lanmu8"></div>
+                <div id="lanmu9"></div>
+            </div>
+        </div>
+        <div class="pagefoot">
+            <span>版权所有，翻印必究！</span>
+        </div>
+    </div>
+</body>
+</html>
