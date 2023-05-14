@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+    <script type="text/javascript">
+        function Person(name,age) {
+            this.name = name;
+            this.age = age;
+            this.sayHello = function helloWorld() {
+                alert("Hello World!");
+            }
+        }
+        function Dog(){
+        }
+        var person = new Person("孙悟空",28);
+        var dog = new Dog();
+        console.log(person);
+        console.log(person instanceof Person);
+        console.log(dog instanceof Person);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+    <script type="text/javascript">
+        function waidiaohanshu(){
+            alert("Hello,World!I'm " + this.name);
+        }
+
+        function Person(name,age,gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = waidiaohanshu;
+        }
+        var person = new Person("Lily",18, "Female")
+        var person2 = new Person("Mike",28, "Male")
+        person.sayName();
+        person2.sayName();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

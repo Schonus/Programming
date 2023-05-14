@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+    <script type="text/javascript">
+        function myClass(age){
+            this.age = age;
+        }
+        myClass.prototype.name = "我是原型中的名字";
+        var mc = new myClass(18);
+        console.log(mc.name);
+        console.log(mc.hasOwnProperty("age"));
+        console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+    <script type="text/javascript">
+        function createPerson(name,age,gender) {
+            var obj = {
+                name:name,
+                age:age,
+                gender:gender
+            }
+            return obj;
+        }
+        var obj = createPerson("孙悟空",28,"男");
+        var obj2 = createPerson("猪八戒",28,"男");
+        var obj3 = createPerson("沙和尚",38,"男");
+        alert(obj.name + obj.age + obj.gender);
+        alert(obj2.name + obj2.age + obj2.gender);
+        alert(obj3.name + obj3.age + obj3.gender);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
