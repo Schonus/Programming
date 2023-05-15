@@ -1,0 +1,5 @@
+/* #region 很蠢的选择法 */
+.discription .device_datatable tbody tr:nth-child(2),.discription .device_datatable tbody tr:nth-child(3),.discription .device_datatable tbody tr:nth-child(8),.discription .device_datatable tbody tr:nth-child(9),.discription .device_datatable tbody tr:nth-child(10),.discription .device_datatable tbody tr:nth-child(11),.discription .device_datatable tbody tr:nth-child(12),.discription .device_datatable tbody tr:nth-child(13),.discription .device_datatable tbody tr:nth-child(14),.discription .device_datatable tbody tr:nth-child(18),.discription .device_datatable tbody tr:nth-child(19),.discription .device_datatable tbody tr:nth-child(20),.discription .device_datatable tbody tr:nth-child(24),.discription .device_datatable tbody tr:nth-child(26),.discription .device_datatable tbody tr:nth-child(27),.discription .device_datatable tbody tr:nth-child(28),.discription .device_datatable tbody tr:nth-child(33),.discription .device_datatable tbody tr:nth-child(37),.discription .device_datatable tbody tr:nth-child(38),.discription .device_datatable tbody tr:nth-child(n+42){
+    background-color: lightgray;
+}
+/* #endregion 很蠢的选择法 */
