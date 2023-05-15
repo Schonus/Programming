@@ -1,0 +1,17 @@
+.discription{
+    width: 100%;
+    background-color: aqua;
+    overflow: hidden;
+}
+.img1{
+    width: 40%;
+    margin: 5%;
+}
+.text_discription{
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 40%;
+}
+.text_discription li{
+    list-style-type: symbols();
+}

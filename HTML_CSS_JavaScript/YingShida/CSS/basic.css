@@ -1,9 +1,19 @@
+/* #region 整理样式 */
 *{/*默认属性*/
     padding: 0px;
     margin: 0px;
     font-size: 20px;/*预设字体大小*/
     font-family: "Microsoft YaHei","SimHei","STHeiti","STSong";/*预设字体*/
 }
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+li{
+    list-style-type: d;
+}
+/* #endregion 整理样式*/
 .container{/*窗体属性*/
     margin: 0 auto;/*居中*/
     min-width: 900px;/*最小页面宽度*/
@@ -15,46 +25,105 @@
     display: block;
     clear: both;
 }
-.pageheader{
-    width: 100%;
+/* #region浮动 */
+.leftfix{
+    float: left;
 }
-.header_top::after{
+.rightfix{
+    float: right;
+}
+.clearbox::after{
     content: "";
     display: block;
     clear: both;
 }
+/* #endregion 浮动 */
+
+.pagebody{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+/* #region 图标 */
+.pageheader{
+    width: 100%;
+}
+#logo_container{
+    float: left;
+    width: 580px;
+}
+#logo/*图标样式*/
+{
+    width: 60px;
+    height: 60px;
+    position: relative;/*固定在左上角*/
+}
+#title{/*图标样式*/
+    display: inline-block;/*防止走形*/
+    font-size: 30px;
+    vertical-align: top;/*字体往上跑*/
+}
+#title_description{/*图标样式*/
+    font-size: 1rem;/*初始字体大小*/
+    font-weight: lighter;/*设置宽度*/
+}
+/* #endregion 图标 */
+/* #region 联系方式框 */
 .header_bottom{
     margin: 0px auto 50px auto;
     width: 100%;
     overflow: hidden;
 }
+#basic_contact{
+    float: right;
+    width: 320px;
+}
+.basic_info_pic{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.basic_info{
+    display: inline;
+    vertical-align: top;
+}
+/* #endregion 联系方式框 */
+/* #region 菜单 */
 .menu{
     text-align: center;
     height: 50px;
     background-color: rgb(0, 0, 160);
-    line-height: 30px;
+    line-height: 100%;
 }
-a{
-    text-decoration: none;
-    cursor: default;
-    color: black;
-}
-.pagebody{
-    width: 90%;
-    border: 1px solid black;
-    margin: 0 auto;
-}
-.pagebody_1floor{
-    background-color: gray;
-    height: 400px;
-    margin-bottom: 50px;
-}
-.pagebody_2floor{
-    background-color: gray;
-    text-align: center;
-    margin-bottom: 50px;
+.menu-list
+{
+    display: inline-block;
+    width: 10%;
+    min-width: 150px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    background-color: rgb(0, 0, 160);
 }
 
+.menu-list:hover{
+    background-color: rgb(50, 50, 255);
+}
+.menu-list:active
+{
+    background-color: rgb(255, 255, 255);
+}
+.menu-list a{
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+}
+.menu-list a:active{
+    color: #000;
+}
+
+/* #endregion 菜单 */
+/* #region 页脚 */
 .pagefoot{
     width: 100%;
     height: 500px;
@@ -62,7 +131,30 @@ a{
     text-align: center;
     overflow: hidden;
     color: white;
+    margin-top: 50px;
 }
+.Footmenu{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.footmenu ul li{
+    font-weight: bold;
+}
+.footmenu ul li a{
+    color: #fff;
+    font-weight: lighter;
+}
+.footmenu{
+    display: inline-block;
+    line-height: 40px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+/* #endregion 页脚 */
+
+
+
+/* #region 真正的页脚 */
 #announcement {
     margin-top: 50px;
 }
@@ -70,3 +162,4 @@ a{
     font-size: 20px;
     font-family: "STSong";
 }
+/* #endregion 真正的页脚 */
