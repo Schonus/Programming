@@ -1,14 +1,15 @@
 h1{
     margin: 0 auto 40px auto;
-    width: 200px;
+    width: 400px;
     font-size: 40px;
     color: navy;
-    padding: 0px 0px;
     border: 10px solid navy;
     border-radius: 10px;
     text-align: center;
 }
 .projects_container{
+    width: 90%;
+    margin: 0 auto;
     border: 1px solid #aaa;
     background-color: #eee;
 }
@@ -23,3 +24,27 @@ h1{
 .project_display img{
     width: 100%;
 }
+/* #region 具体项目图片 */
+.specific_project_title{
+    margin: 0 auto 40px auto;
+    width: 100%;
+    font-size: 40px;
+    color: navy;
+    text-align: center;
+    margin: 40px;
+    border: none;
+}
+.specific_project_display{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #aaa;
+    background-color: #eee;
+}
+.specific_project_display img{
+    width: 32%;
+    margin: 5%;
+    display: inline-block;
+    vertical-align: middle;
+}
+/* #endregion 具体项目图片 */
