@@ -1,31 +1,3 @@
-/* #region 简易菜单栏 */
-.concise_menu{
-    width: 100%;
-    height: 30px;
-    position: relative;
-    margin-top: 40px;
-}
-.concise_menu:first-of-type{
-    margin-top: 0;
-}
-.concise_menu a{
-    display: inline-block;
-    width: 20%;
-    text-align: center;
-    background-color: rgb(242, 242, 242);
-    position: absolute;
-}
-.concise_menu a:hover{
-    background-color: red;
-}
-.concise_menu a:nth-of-type(2){
-    left: 50%;
-    transform: translate(-50%);
-}
-.concise_menu a:last-of-type{
-    right: 0;
-}
-/* #endregion 简易菜单栏 */
 /* #region 描述声明 */
 .discription{
     width: 100%;
