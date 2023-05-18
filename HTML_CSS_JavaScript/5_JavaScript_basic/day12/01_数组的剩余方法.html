@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_数组的剩余方法</title>
+    <script type="text/javascript">
+        var arr=["孙悟空","猪八戒","沙和尚"];
+        var arr2=["白骨精","玉兔精","鲶鱼精"];
+        var arr3=["王朗","章家敦","岳不群"];
+        var arrcon=arr.concat(arr2,arr3,"布琼尼","葛兰");
+        var arrjon = arr.join("-");
+        arr.reverse();
+        var arrjon2 = arr.join("-");
+        document.writeln(arrcon + "<br>");
+        document.writeln(arrjon + "<br>");
+        document.writeln(arrjon2 + "<br>");
+
+        arr = [35,628,90,2,7,63];
+        arr.sort(function(a,b){
+            return a-b;
+        });
+        document.write(arr);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
