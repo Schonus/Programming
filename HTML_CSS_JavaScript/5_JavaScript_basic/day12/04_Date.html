@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_date</title>
+    <script type="text/javascript">
+        var d = new Date();
+        document.writeln(d + "<br>");
+        var d2 = new Date("2020/5/28 12:23:33");
+        document.writeln(d2 + "<br>");
+        var date = d.getDate();
+        document.writeln("date = " + date + "<br>");
+        var day = d.getDay();
+        document.writeln("day = " + day+ "<br>");
+        var Month = d.getMonth();
+        document.writeln("month = " + Month + "<br>");
+        // 还有getMinutes、getSeconds、getHours、getMilliseconds、getFullYear等
+
+        var timeslot = d.getTime();
+        document.writeln(timeslot = "<br>");
+        var d3 = new Date("1/1/1970 8:00:00")
+        timeslot = d3.getTime();
+        document.writeln(timeslot);
+        timeslot = Date.now();
+        document.writeln(timeslot);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

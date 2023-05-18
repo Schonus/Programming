@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08_正则表达式</title>
+    <script type="text/javascript">
+        // 正则表达式
+        var reg = /a/i;
+        var str = "a";
+        var result = reg.test(str);
+        document.writeln(result);
+        var reg2 = /a|b/;
+        document.writeln(reg2.test("anrre"));
+        var reg3 = /[A-z]/;
+        document.writeln(reg3.test("B"));
+        var reg4 = /a[A-z]c/;
+        document.writeln(reg4.test("B"));
+        var reg5 = /[^0-9]/;
+        document.writeln(reg5.test("9a"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

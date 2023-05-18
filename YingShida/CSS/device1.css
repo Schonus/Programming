@@ -1,0 +1,26 @@
+
+/* #region 描述声明 */
+.discription{
+    width: 100%;
+    overflow: hidden;
+}
+.img1{
+    width: 40%;
+    margin: 5%;
+}
+.text_discription{
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 40%;
+    background-color: rgb(255, 252, 216);
+    overflow: hidden;
+}
+.text_discription ul{
+    margin-left: 50px;
+}
+.text_discription li{
+    list-style-image: linear-gradient(red,red);
+    margin: 5px 0;
+}
+/* #endregion 描述声明 */
+

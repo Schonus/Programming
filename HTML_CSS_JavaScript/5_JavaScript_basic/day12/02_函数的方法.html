@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_函数的剩余方法</title>
+    <script type="text/javascript">
+        function fun(a,b){
+            document.writeln("a = " + a + "<br>");
+            document.writeln("b = " + b + "<br>");
+        }
+        var obj2={name: "obj2",sayName: function() {
+            alert(this.name);            
+        }};
+        
+        var obj={name: "obj",sayName: function() {
+            alert(this.name);            
+        }};
+        fun.apply(obj,[2,3]);
+        // fun.apply(obj.sayName);
+        // fun.apply(obj2.sayName);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

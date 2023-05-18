@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>02_正则表达式</title>
+    <script type="text/javascript">
+        // var reg = /\./;
+        // var data = "red.img";
+        // document.writeln(reg.test(data));
+        // var reg = /a.b/;
+        // var data = "rea.bmg";
+        // document.writeln(reg.test(data));
+        // reg = /\\/;
+        // document.writeln(reg.test(data+"\\"));
+        // reg = /\bchild\b/i;
+        // reg = /\Bchild\B/i;
+        // document.writeln(reg.test("Child"));
+
+        // 接收一个用户的输入
+        var str = prompt("请输入你的用户名：");
+        str = str.replace(/^\s+/g,"");
+        str = str.replace(/\s+$/g,"");
+        document.writeln(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
