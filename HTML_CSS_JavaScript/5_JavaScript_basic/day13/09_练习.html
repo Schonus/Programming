@@ -19,12 +19,20 @@
             margin-right: 100px;
         }
     </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var imgtag = document.getElementsByClassName(pictures_container);
+            var pre = document.getElementsByClassName(prev);
+            var nxt = document.getElementsByClassName(next);
+        }
+
+    </script>
 </head>
 <body>
     <div class="outer">
-        <img src="img/1.jpg" alt="冰棍">
-        <button class="prev">上一张</button>
-        <button class="next">下一张</button>
+        <img class="pictures_container" src="img/1.jpg" alt="冰棍">
+        <button class="prev">&lt;上一张</button>
+        <button class="next">下一张&gt;</button>
     </div>
 </body>
 </html>
