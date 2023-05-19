@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>全选练习</title>
+	<script type="text/javascript">
+		// 写获取元素器
+		function getElements(arr){
+			// 设置返回元素数组
+			var Elements_Container = new Array;
+			// 设置循环
+			for(var i=0;i<arr.length;i++)
+			{
+				// 定义参数的意义
+				switch (arr[i][1]) {
+					case "I":
+					case "i":
+						// 按id查找
+						Elements_Container[i] = document.getElementById(arr[i][0]);
+						break;
+					case "C":
+					case "c":
+						// 按照class查找，可能会有多个值
+						Elements_Container[i] = document.getElementsByClassName(arr[i][0]);
+						break;
+					case "TN":
+					case "tn":
+						// 未知
+						Elements_Container[i] = document.getElementsByTagName(arr[i][0]);
+						break;
+					case "N":
+					case "n":
+						// 按照name查找，可能会有多个值
+						Elements_Container[i] = document.getElementsByName(arr[i][0]);
+						break;
+					default:
+						// 设置异常状态
+						alert("数据错误！");
+						return -1;
+						break;
+				}
+			}
+			return Elements_Container;
+		}
+		
+		
+		function myClick_About_Checkbox(arr,node){
+			for(var i=0;i<node.length;i++){
+				switch(node[i].id){
+					case "checkAllButton":
+						
+						node[i].onclick = function() {
+							for(var j=0;j<node.length;j++){
+								arr[j].checked = true;
+							}
+						}
+						break;
+					case "checkNoButton":
+						node[i].onclick = function() {
+							for(var j=0;j<node.length;j++){
+								arr[j].checked = false;
+							}
+						}
+						break;
+					case "checkRevButton":
+						node[i].onclick = function() {
+							for(var j=0;j<node.length;j++){
+								arr[j].checked = !(arr[j].checked);
+							}
+						}
+						break;
+					case "checkallbox":
+						node[i].checked = function(){
+							for(var j=0;j<node.length;j++){
+								arr[j].checked = true;
+							}
+						}
+						break;
+					case "sendButton":
+						node[i].onclick = function(){
+							for(var j=0;j<node.length;j++){
+								alert(arr[j].checked);
+							}
+						}
+						break;
+				
+					default:
+						break;
+					
+				}
+			}
+		}
+		window.onload = function(){
+			var sender=[
+				["items","n"],
+				["checkAllButton","i"],
+				["checkNoButton","i"],
+				["checkRevButton","i"],
+				["sendButton","i"],
+				["checkallbox","i"]
+			];
+			var elements = getElements(sender);
+			var work = [];
+			for(var i=1;i<elements.length;i++){
+				work[i-1]=elements[i];
+			}
+
+			myClick_About_Checkbox(elements[0],work)
+		}
+	</script>
+</head>
+<body>
+	<form method="" action="">
+		<span>你爱好的运动是？</span><input type="checkbox" id="checkallbox" >全选/全不选<br>
+		<input type="checkbox" name="items" value="篮球">篮球
+		<input type="checkbox" name="items" value="足球">足球
+		<input type="checkbox" name="items" value="羽毛球">羽毛球
+		<input type="checkbox" name="items" value="乒乓球">乒乓球
+		<br>
+		<input type="button" id="checkAllButton" value="全    选">
+		<input type="button" id="checkNoButton" value="全 不 选">
+		<input type="button" id="checkRevButton" value="反    选">
+		<input type="button" id="sendButton" value="提    交">
+	</form>
+</body>
+</html>

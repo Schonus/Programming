@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>09-练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .outer{
+            width: 500px;
+            margin: 100px auto;
+            padding: 10px;
+            background-color: greenyellow;
+            text-align: center;
+        }
+        #prev{
+            margin-right: 100px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var cap = document.getElementsByClassName("caption")[0];
+            var img = document.getElementsByClassName("imgctn")[0];
+            var pre = document.getElementById("prev");
+            var nxt = document.getElementById("next");
+            var count = 1;
+            var maxcount = 5;
+            cap.innerHTML = "一共有" + maxcount.toString() +"张图片,目前第" + count.toString() + "张";
+            pre.onclick = function(){
+                if(count == 1)
+                {
+                    count = 5;
+                }
+                else{
+                    count --;
+                }
+                img.src = "img/" + count.toString() + ".jpg";
+                cap.innerHTML = "一共有" + maxcount.toString() +"张图片,目前第" + count.toString() + "张";
+            }
+            nxt.onclick = function(){
+                if(count == 5)
+                {
+                    count = 1;
+                }
+                else{
+                    count++;
+                }
+                img.src = "img/" + count.toString() + ".jpg";
+                cap.innerHTML = "一共有" + maxcount.toString() +"张图片,目前第" + count.toString() + "张";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <p class="caption"></p>
+        <img class="imgctn" src="img/1.jpg" alt="">
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+</html>
