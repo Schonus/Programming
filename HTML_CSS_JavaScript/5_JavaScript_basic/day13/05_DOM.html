@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>05_DOM</title>
+
+</head>
+<body>
+    <button id="button">我是一个按钮</button>
+    <script type="text/javascript">
+        var btn = document.getElementById("button");
+        btn.onclick = function() {
+            alert("heyhey！你点到我了，道歉会不会！");
+            btn.innerHTML = "你干嘛，诶呦~"
+        }
+    </script>
+</body>
+</html>
