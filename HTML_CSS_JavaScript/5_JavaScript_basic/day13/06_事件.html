@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>06_事件</title>
+</head>
+<body>
+    <button id="button">我是一个按钮</button>
+    <script type="text/javascript">
+        var count = 0;
+        var btn = document.getElementById("button");
+        btn.onclick = function() {
+            count++;
+            if(count < 3){
+                alert("小黑子油饼食不食");
+                btn.innerHTML = "你干嘛，诶呦~"
+            }
+            else{
+                alert("你们黑他黑的那么爽！道歉！道歉！道歉！道歉！");
+                btn.innerHTML = "小黑子道歉！"
+            }
+        }
+    </script>
+</body>
+</html>

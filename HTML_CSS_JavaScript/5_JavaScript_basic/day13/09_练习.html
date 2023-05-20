@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>09_练习</title>
+    <title>09-练习</title>
     <style>
         *{
             margin: 0;
@@ -10,29 +10,55 @@
         }
         .outer{
             width: 500px;
-            margin: 100px;
-            background-color: skyblue;
+            margin: 100px auto;
             padding: 10px;
+            background-color: greenyellow;
             text-align: center;
         }
-        .prev{
+        #prev{
             margin-right: 100px;
         }
     </style>
     <script type="text/javascript">
-        window.onload = function() {
-            var imgtag = document.getElementsByClassName(pictures_container);
-            var pre = document.getElementsByClassName(prev);
-            var nxt = document.getElementsByClassName(next);
+        window.onload = function(){
+            var cap = document.getElementsByClassName("caption")[0];
+            var img = document.getElementsByClassName("imgctn")[0];
+            var pre = document.getElementById("prev");
+            var nxt = document.getElementById("next");
+            var count = 1;
+            var maxcount = 5;
+            cap.innerHTML = "一共有" + maxcount.toString() +"张图片,目前第" + count.toString() + "张";
+            pre.onclick = function(){
+                if(count == 1)
+                {
+                    count = 5;
+                }
+                else{
+                    count --;
+                }
+                img.src = "img/" + count.toString() + ".jpg";
+                cap.innerHTML = "一共有" + maxcount.toString() +"张图片,目前第" + count.toString() + "张";
+            }
+            nxt.onclick = function(){
+                if(count == 5)
+                {
+                    count = 1;
+                }
+                else{
+                    count++;
+                }
+                img.src = "img/" + count.toString() + ".jpg";
+                cap.innerHTML = "一共有" + maxcount.toString() +"张图片,目前第" + count.toString() + "张";
+            }
         }
-
     </script>
 </head>
 <body>
     <div class="outer">
-        <img class="pictures_container" src="img/1.jpg" alt="冰棍">
-        <button class="prev">&lt;上一张</button>
-        <button class="next">下一张&gt;</button>
+        <p class="caption"></p>
+        <img class="imgctn" src="img/1.jpg" alt="">
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
     </div>
 </body>
 </html>
