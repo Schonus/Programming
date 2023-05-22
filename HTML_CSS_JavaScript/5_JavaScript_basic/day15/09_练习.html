@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+        }
+        body{
+            height: 1000px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            function div_move(event){
+                var left = event.pageX;
+                var top = event.pageY;
+                event = event|window.event;
+                box1.style.left = left + "px";
+                box1.style.top = top + "px";
+            }
+            var box1 = document.querySelector(".box1");
+            
+            document.onmousemove = div_move;
+            document.onscroll = div_move;
+        }
+    </script>
+    <title>09_练习</title>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
