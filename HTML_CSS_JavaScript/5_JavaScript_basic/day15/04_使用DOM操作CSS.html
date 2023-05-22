@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #box1{
+            width: 400px;
+            height: 400px;
+            background-color: rebeccapurple;
+            transition: 0.4s 0s cubic-bezier(0.165, 0.84, 0.44, 1) all;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var button1 = document.querySelector(".button1");
+            var button2 = document.querySelector(".button2");
+            var box1 = document.getElementById("box1");
+            button1.onclick = function(){
+                box1.style.width = "600px";
+                box1.style.height = "600px";
+                box1.style.backgroundColor = "yellow";
+                box1.style.border = "10px solid black";
+            }
+            button1.onkeypress = function(){
+                box1.style.width = "400px";
+                box1.style.height = "400px";
+                box1.style.backgroundColor = "rebeccapurple";
+                box1.style.border = "none";
+            }
+            button2.onclick = function(){
+                alert(box1.style.width);
+                alert(box1.style.height);
+                alert(box1.style.backgroundColor);
+                alert(box1.style.border);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button class="button1">点我一下</button>
+    <button class="button2">读取一下</button>
+    <div id="box1"></div>
+</body>
+</html>

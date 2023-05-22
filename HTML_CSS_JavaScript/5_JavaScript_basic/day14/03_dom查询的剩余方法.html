@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Untitled Document</title>
+	<script type="text/javascript">
+		window.onload = function() {
+			// var body = document. ("body")[0];
+			// var body = document.body;
+			// console.log(body);
+			// var html = document.documentElement;
+			// console.log(html);
+			// var all = document.all;
+			// console.log(all.length);
+			// for(var i=0;i<all.length;i++){
+				// console.log(all[i]);
+			// }
+			// var box1 = document.getElementsByClassName("box1");
+			// console.log(box1.length);
+			// var div1 = document.getElementsByTagName("div");
+			// var div = document.querySelector(".box1 div");
+			var div = document.querySelectorAll(".box1");
+			console.log(div);
+		}
+	</script>
+</head>
+<body>
+	<div class="box1">我是第一个box1
+		<div>我是box1中的div</div>
+	</div>
+	<div class="box1">
+		<div>我是box1中的div</div>
+	</div>
+	<div class="box1">
+		<div>我是box1中的div</div>
+	</div>
+</body>
+</html>
