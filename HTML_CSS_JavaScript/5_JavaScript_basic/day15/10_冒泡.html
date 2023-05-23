@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>10_冒泡</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .s1{
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            // 为s1设定单击响应函数
+            var s1 = document.querySelector(".s1");
+            s1.onclick = function(event) {
+                alert("我是span的单击响应函数！");
+                // 取消冒泡演示
+                event = event | window.event;
+                event.cancelBubble = true;
+            }
+            // 为div设定单击响应函数
+            var box1 = document.querySelector(".box1");
+            box1.onclick = function() {
+                alert("我是div的单击响应函数！");
+            }
+            // 为body设定单击响应函数
+            var body = document.getElementsByTagName("body")[0];
+            body.onclick = function() {
+                alert("我是body的单击响应函数！");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box1">
+        我是box1
+        <span class="s1">我是一个span</span>
+    </div>
+</body>
+</html>

@@ -15,16 +15,20 @@
         }
         body{
             height: 1000px;
+            width: 2000px;
         }
     </style>
     <script type="text/javascript">
         window.onload = function() {
             function div_move(event){
-                var left = event.pageX;
-                var top = event.pageY;
+                var left = event.clientX;
+                var top = event.clientY;
                 event = event|window.event;
-                box1.style.left = left + "px";
-                box1.style.top = top + "px";
+                var st = document.body.scrollTop || document.documentElement.scrollTop;
+                var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+                // console.log(st);
+                box1.style.left = left + sl + "px";
+                box1.style.top = top + st + "px";
             }
             var box1 = document.querySelector(".box1");
             
