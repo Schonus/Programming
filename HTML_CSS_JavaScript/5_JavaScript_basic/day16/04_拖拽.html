@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_拖拽</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box1 = document.querySelector(".box1");
+            box1.onmousedown = function(event){
+                event = event || window.event;
+                X = event.offsetX;
+                Y = event.offsetY;
+                document.onmousemove = function(event) {
+                    event = event || window.event;
+                    box1.style.left = event.clientX - X + "px";
+                    box1.style.top = event.clientY - Y + "px";
+                }
+                document.onmouseup = function() {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    
+    
+    <div class="box2"></div>
+</body>
+</html>

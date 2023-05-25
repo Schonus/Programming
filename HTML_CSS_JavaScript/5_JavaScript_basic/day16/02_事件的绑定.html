@@ -5,8 +5,31 @@
     <title>01_事件的委派</title>
     <script type="text/javascript">
         window.onload = function() {
+            function decon (){
+                alert(1);
+            }
+            function decon2 (){
+                alert(2);
+            }
+            function decon3 (){
+                alert(3);
+            }
+            function bind(obj,eventStr,callback){
+                (obj.addEventListener)?(obj.addEventListener(eventStr,callback,false)):(obj.attachEvent("on" + eventStr,callback));
+            }
             // 点击按钮以后弹出一个内容
-            var btn01 = document.getElementById("btn01");
+            var btn01 = document.querySelector(".btn01");
+
+            // btn01.onclick = 
+            // btn01.addEventListener("click",decon,false);
+            // btn01.addEventListener("click",decon2,false);
+            // btn01.addEventListener("click",decon3,false);
+            // btn01.attachEvent("onclick",decon);
+            // btn01.attachEvent("onclick",decon2);
+            // btn01.attachEvent("onclick",decon3);
+            bind(btn01,"click",decon);
+            bind(btn01,"click",decon2);
+            bind(btn01,"click",decon3);
         }
     </script>
 </head>

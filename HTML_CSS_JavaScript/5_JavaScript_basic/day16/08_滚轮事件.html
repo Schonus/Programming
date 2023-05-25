@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08_滚轮事件</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box1 = document.getElementById("box1");
+            box1.onmousewheel = fun;
+            bind(box1,"DOMMouseScroll",fun);
+            function fun(event) {
+                event = event || window.event;
+                radius = parseInt(getComputedStyle(box1,null).borderRadius);
+                if(event.wheelDelta > 0 || event.detail < 0){
+                    box1.style.borderRadius = radius + 1 + "px";
+                }
+                else{
+                    box1.style.borderRadius = radius - 1 + "px";
+                }
+                event.preventDefault || event.preventDefault();
+                return false;
+            }
+        }
+        function bind(obj,eventStr,callback){
+                (obj.addEventListener)?(obj.addEventListener(eventStr,callback,false)):(obj.attachEvent("on" + eventStr,callback));
+            }
+    </script>
+</head>
+<body style="height: 2000px;">
+    <div id="box1"></div>
+    
+    
+</body>
+</html>

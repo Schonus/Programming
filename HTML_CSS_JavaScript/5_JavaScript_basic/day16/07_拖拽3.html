@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>07_拖拽3</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box1 = document.querySelector(".box1");
+            var box2 = document.querySelector(".box2");
+            drag(box1);
+            drag(box2);
+            function drag(obj){
+                obj.onmousedown = function(event){
+                    event = event || window.event;
+                    var ol = event.clientX - obj.offsetLeft;
+                    var ot = event.clientY - obj.offsetTop;
+                    document.onmousemove = function(event) {
+                        event = event || window.event;
+                        var Left = event.clientX - ol;
+                        var Top = event.clientY - ot;
+                        obj.style.left = Left + "px";
+                        obj.style.top = Top + "px";
+                    }
+                    document.onmouseup = function() {
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    }
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    
+    
+    <div class="box2"></div>
+</body>
+</html>

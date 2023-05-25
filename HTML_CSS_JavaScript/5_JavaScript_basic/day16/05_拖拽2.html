@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>05_拖拽</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box1 = document.querySelector(".box1");
+            var box2 = document.querySelector(".box2");
+            box1.onmousedown = function(event){
+                event = event || window.event;
+                var X = event.clientX - box1.offsetLeft;
+                var Y = event.clientY - box1.offsetTop;
+                document.onmousemove = function(event) {
+                    event = event || window.event;
+                    var Left = event.clientX - X;
+                    var Top = event.clientY - Y;
+                    box1.style.left = Left + "px";
+                    box1.style.top = Top + "px";
+                }
+                document.onmouseup = function() {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+                return false;
+            }
+            box2.onmousedown = function(event){
+                event = event || window.event;
+                var ol = event.clientX - box2.offsetLeft;
+                var ot = event.clientY - box2.offsetTop;
+                document.onmousemove = function(event) {
+                    event = event || window.event;
+                    var Left = event.clientX - ol;
+                    var Top = event.clientY - ot;
+                    box2.style.left = Left + "px";
+                    box2.style.top = Top + "px";
+                }
+                document.onmouseup = function() {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    
+    
+    <div class="box2"></div>
+</body>
+</html>

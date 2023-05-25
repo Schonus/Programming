@@ -4,75 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/basic_style.css">
     <title>小工具</title>
-    <style>
-        *{
-            padding: 0;
-            font-size: 14px;
-        }
-        .container
-        {
-            min-width: 400px;
-            max-width: 1600px;
-            width: 90%;
-            margin: 0 auto;
-            /* border: 1px solid black; */
-            
-        }
-        #basic_info{
-            margin: 0 auto;
-        }
-        .excel{
-            width: 100%;
-            text-align: center;
-            margin: 0 auto;
-            /* border: 1px; */
-        }
-        .excel td{
-            border: 1px solid #ccc;
-        }
-        .excel input,.excel textarea{
-            width: 100%;
-            border: none;
-            height: 50px;
-            font-size: 150%;
-            cursor: text;
-        }
-        #special_input{
-            width: 5%;
-            background-color: transparent;
-            border: 2px solid black;
-            border-radius: 20%;
-            vertical-align: middle;
-        }
-        .excel thead{
-            background-image: linear-gradient(#0011ff,#000fe2,#0011ff);
-            color: white;
-            vertical-align: middle;
-        }
-        .excel tbody .first_cell{
-            background-color: skyblue;
-            width: 20%;
-            font-size: 16px;
-            border: none;
-            transition: all linear 0.25s;
-        }
-        .excel tbody .first_cell:hover{
-            background-color: yellowgreen;
-        }
-        #basic_info button{
-            width: 20%;
-            height: 30px;
-            font-size: 20px;
-        }
-        #info_sender{
-            margin-right: 20%;
-        }
-    </style>
+
 </head>
 <body>
     <div class="container">
-        <form action="" id="basic_info">
+        <form action="./data/123.xls" method="post" id="basic_info">
             <table class="excel" cellspacing="0">
                 <caption>收集数据</caption>
                 <thead>
@@ -200,7 +139,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="2">
-                                <button id="info_sender">提交</button>
+                                <button id="info_sender">提交</a>
                                 <button type="reset">重置</button>
                             </td>
                         </tr>
@@ -210,15 +149,10 @@
         </form>
     </div>
     <script type="text/javascript">
-        saveAsExcel("form","form")
-        function saveAsExcel(HeadName, DivName) {
-            var s = "<center>" + HeadName + "</center>" + "\r\n";
-            s += DivName.innerHTML;
-            var xlsWindow = window.open("", "_blank", "width=1,height=1,scrollbars=no,toolbar=no");
-            xlsWindow.document.write(s);
-            xlsWindow.document.close();
-            xlsWindow.document.execCommand('Saveas', true, '%homeDrive%\\Data.xls')
-            xlsWindow.close();
+        var info_sender = document.getElementById("info_sender");
+        function saveAsExcel(tableID) {
+            var tb = new TabletoExcel()
+            
         }
     </script>
 </body>
