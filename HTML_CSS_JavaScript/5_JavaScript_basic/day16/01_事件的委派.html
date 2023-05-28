@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>01_事件的委派</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            // function allA_apply() {
+            //         alert("我是a的单击响应函数");
+            //         return false;
+            //     }
+            var allA = document.getElementsByTagName("a");
+            // for(var i=0; i<allA.length;i++){
+            //     allA[i].onclick = function allA_apply() {
+            //         alert("我是a的单击响应函数");
+            //         return false;
+            //     };
+            // }
+            var btn01 = document.querySelector(".btn01");
+            var u1 = document.querySelector(".u1");
+            var reg = /(&quot;|&nbsp;|\b)link(&quot;|&nbsp;|\b)/
+            btn01.onclick = function() {
+                var li_append = document.createElement("li");
+                li_append.innerHTML = "<a href=javascript:; class=link>新建的超链接</a_append>";
+                // li_append.getElementsByTagName["a"][0].onclick = allA_apply;
+                u1.appendChild(li_append);
+            }
+            u1.onclick = function(event) {
+                if(reg.test(event.target.className))
+                {
+                    alert("我是a的单击响应函数");
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <button class="btn01">获取超链接</button>
+    <ul class="u1">
+        <li><a href="javascript:;" class="link">超链接1</a></li>
+        <li><a href="javascript:;" class="popular slink">超链接2</a></li>
+        <li><a href="javascript:;" class="link">超链接3</a></li>
+
+    </ul>
+</body>
+</html>
