@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>05_练习</title>
+    <style>
+        #pic1{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var img = document.getElementById("pic1");
+            // 将要加载的图片
+            var arr = ["PA_and_TOFD_scanner_ENC-10-1.jpg","PA_and_TOFD_scanner_ENC10-2.jpg","PA_and_TOFD_scanner_FC01.jpg"];
+            var i = 0;
+            var timer = null;
+            var btn1 = document.getElementById("start");
+            btn1.onclick = function() {
+                // 在开启定时器之前，需要将上一个定时器关闭
+                clearInterval(timer);
+                // 开启定时器主题，并且记录下其索引
+                timer = setInterval(function current() {
+                    img.src = "./img/" + arr[i++];
+                    // 限制范围
+                    i = i % arr.length;
+                },1000);
+            }
+            var btn2 = document.getElementById("stop");
+            btn2.onclick = function() {
+                // 清除定时器
+                clearInterval(timer);
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="./img/phascan.jpg" alt="" id="pic1">
+    <hr>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>01_BOM</title>
+    <script type="text/javascript">
+        // console.log(window.navigator);
+        console.log(navigator.userAgent);
+        // console.log(location);
+        // console.log(history);
+        // console.log(screen);
+        var ua = navigator.userAgent;
+
+        if(/firefox/i.test(ua)){
+            document.writeln("你是火狐！！！");
+        }
+        else if(/chrome/i.test(ua)){
+            document.writeln("你是chrome！！！");
+        }
+        else if(/MSIE/i.test(ua)){
+            document.writeln("你是IE！！！");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

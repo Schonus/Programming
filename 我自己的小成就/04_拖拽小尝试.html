@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_拖拽</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box1 = document.querySelector(".box1");
+            var box2 = document.querySelector(".box2");
+            box1.onmousedown = function(){
+                event = event || window.event;
+                var X = event.clientX - box1.offsetLeft;
+                var Y = event.clientY - box1.offsetTop;
+                document.onmousemove = function(event) {
+                    event = event || window.event;
+                    var Left = event.clientX - X;
+                    var Top = event.clientY - Y;
+                    box1.style.marginLeft = Left + "px";
+                    box1.style.marginTop = Top + "px";
+                }
+                document.onmouseup = function() {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+            }
+            box2.onmousedown = function(){
+                event = event || window.event;
+                var X2 = event.clientX - box2.offsetLeft;
+                var Y2 = event.clientY - box2.offsetTop;
+                document.onmousemove = function(event) {
+                    event = event || window.event;
+                    var Left2 = event.clientX - X2;
+                    var Top2 = event.clientY - Y2;
+                    box2.style.marginLeft = Left2 + "px";
+                    box2.style.marginTop = Top2 + "px";
+                }
+                document.onmouseup = function() {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    
+    
+    <div class="box2"></div>
+</body>
+</html>

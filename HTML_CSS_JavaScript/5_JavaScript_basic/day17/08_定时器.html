@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08_定时器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #btn01{
+            margin-bottom: 100px;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        function getStyle(obj,name){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];
+            }else{
+                return obj.currentStyle[name];
+            }
+        }
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+            var btn03 = document.getElementById("btn03");
+            var oldvalue = 0;
+            var timer = null;
+            btn01.onclick = function() {
+                if(!timer){
+                    timer = setInterval(function () {
+                        oldvalue = parseInt(getStyle(box1,"left"));
+                        box1.style.left = oldvalue + 2 + "px";
+                    }, 50);
+                }
+            }
+            btn02.onclick = function(){
+                clearInterval(timer);
+                timer = null;
+            }
+            btn03.onclick = function(){
+                alert(getStyle(box1,"left"));
+            }
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">点击按钮以后box1向右移动</button>
+    <button id="btn02">点击按钮以后box1停止</button>
+    <button id="btn03">获取当前偏移量</button>
+    <div id="box1"></div>
+</body>
+</html>

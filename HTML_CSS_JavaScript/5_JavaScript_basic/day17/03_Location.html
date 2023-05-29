@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>03_Location</title>
+    <script type = "text/javascript">
+        window.onload = function() {
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function() {
+                //alert(location);
+                // location = "http://www.baidu.com"
+                location.reload(false);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>History!</h1>
+    <input type="text">
+    <h1 id = "back">History!</h1>
+    <h1 id = "forward">History!</h1>
+    <button id="btn01">点我！</button>
+</body>
+</html>
