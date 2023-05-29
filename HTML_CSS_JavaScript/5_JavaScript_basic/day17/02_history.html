@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>02_history</title>
+    <script type = "text/javascript">
+        window.onload = function() {
+            alert(history);
+            alert(history.length);
+            var b = document.getElementById("back");
+            var f = document.getElementById("forward");
+            b.onclick = function() {
+                history.back();
+            }
+            f.onclick = function() {
+                history.forward();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>History!</h1>
+    <h1 id = "back">History!</h1>
+    <h1 id = "forward">History!</h1>
+</body>
+</html>

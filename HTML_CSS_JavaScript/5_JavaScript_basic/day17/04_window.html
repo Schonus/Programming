@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_window</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            var number = 0;
+            var count = document.getElementById("count");
+            var timer = setInterval(function(){
+                count.innerHTML = number++;
+                if(number == 11){clearInterval(timer);
+                }
+            }, 100);
+            
+            // console.log(timer);
+            
+        }
+    </script>
+</head>
+<body>
+    <h1 id="count"></h1>
+</body>
+</html>

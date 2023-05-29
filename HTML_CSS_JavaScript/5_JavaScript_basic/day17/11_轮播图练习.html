@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>11_轮播图练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 840px;
+            height: 600px;
+            background-color: yellowgreen;
+            margin: 60px auto 0 auto;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #ul{
+            list-style: none;
+            position: absolute;
+            left: 0px;
+        }
+        #ul li{
+            float: left;
+            margin: 0 20px;
+        }
+        img{
+            width: 800px;
+            height: 600px;
+        }
+        #navDiv{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 200px;
+            height: 60px;
+            text-align: center;
+        }
+        #navDiv a{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #aa000088;
+            margin: 0 6px;
+        }
+    </style>
+    <script type="text/javascript">
+        function getStyle(obj,name){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];
+            }else{
+                return obj.currentStyle[name];
+            }
+        }
+        function move(obj,index){
+            clearInterval(obj.timer);
+            add_index = 0;
+            obj.timer = setInterval(function () {
+                oldvalue = parseInt(getStyle(obj,"left"));
+                if(oldvalue >= -840*(count-1)){
+                    add_index = -1;
+                }else{
+                    add_index = 1;
+                }
+                newvalue = oldvalue + 30*add_index;
+                if(oldvalue <= -840*(count-1) && add_index == -1){
+                    oldvalue = -840*(count-1);
+                    clearInterval(obj.timer);
+                }
+                ul.style.left = newvalue + "px";
+            },30);
+        }
+        window.onload = function(){
+            var ul = document.getElementById("ul");
+            var count = document.getElementsByTagName("img").length;
+            ul.style.width = 840*(count) + "px";
+            var aarr = document.querySelectorAll("#navDiv a");
+            var index = 0;
+            var oldvalue = 0;
+            var newvalue;
+            var timer = null;
+            for(index = 0 ; index < aarr.length; index ++)
+                {
+                    aarr[index].onclick = function(){
+                        move(aarr[index],index);
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <ul id="ul">
+            <li><img src="img/PA_and_TOFD_scanner_ENC-10-1.jpg" alt=""></li>
+            <li><img src="img/PA_and_TOFD_scanner_ENC10-2.jpg" alt=""></li>
+            <li><img src="img/PA_and_TOFD_scanner_FC01.jpg" alt=""></li>
+            <li><img src="img/PA_and_TOFD_scanner_FC02-tube1.jpg" alt=""></li>
+            <li><img src="img/PA_and_TOFD_scanner_FC02-tube3.jpg" alt=""></li>
+            <li><img src="img/PA_and_TOFD_scanner_FC02-tube2.jpg" alt=""></li>
+            <li><img src="img/PA_and_TOFD_scanner_ENC-10-1.jpg" alt=""></li>
+        </ul>
+        <!-- 创建导航按钮 -->
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+</html>

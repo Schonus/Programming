@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>09_定时器2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #btn01{
+            margin-bottom: 100px;
+        }
+        #box1{
+            width: 800px;
+            height: 600px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+        }
+        #line{
+            width: 1px;
+            height: 1000px;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 800px;
+        }
+    </style>
+    <script type="text/javascript">
+        function getStyle(obj,name){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];
+            }else{
+                return obj.currentStyle[name];
+            }
+        }
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+            var btn03 = document.getElementById("btn03");
+            var oldvalue = 0;
+            var newvalue = 0;
+            var timer = null;
+            function move(obj,speed) {
+                clearInterval(timer);
+                timer = setInterval(function() {
+                    oldvalue = parseInt(getStyle(obj,"left"));
+                    newvalue = oldvalue + speed;
+                    obj.style.left = newvalue + "px";
+                    if(newvalue >= 800 && speed > 0)
+                    {
+                        newvalue = 800;
+                        obj.style.left = newvalue + "px";
+                        clearInterval(timer);
+                        timer = null;
+                    }
+                    else if(newvalue <= 0 && speed < 0){
+                        newvalue = 0;
+                        obj.style.left = newvalue + "px";
+                        clearInterval(timer);
+                        timer = null;
+                    }
+                },50);
+            }
+            btn01.onclick = function() {
+                move(box1,10);
+            }
+            btn02.onclick = function() {
+                move(box1,-10);
+            }
+            btn03.onclick = function(){
+                alert(getStyle(box1,"left"));
+            }
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">点击按钮以后box1向右移动</button>
+    <button id="btn02">点击按钮以后box1向左移动</button>
+    <button id="btn03">获取当前偏移量</button>
+    <div id="box1"></div>
+    <div id="line"></div>
+</body>
+</html>
