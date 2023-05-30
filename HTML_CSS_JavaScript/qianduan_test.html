@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class='triangle'></div>
+
+        <script>
+            var triangle = document.querySelector('.triangle');
+            var data = [1,2,3];
+            for(var i=0;i<data.length;i++){
+                for(var j=0;j<data[i];j++)
+                    {
+                        triangle.innerHTML+="*";
+                    }
+                triangle.innerHTML+="<br>";
+            }
+            
+        </script>
+    </body>
+</html>
