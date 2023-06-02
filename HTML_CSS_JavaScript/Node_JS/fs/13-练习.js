@@ -1,21 +1,18 @@
+const { INSPECT_MAX_BYTES } = require("buffer");
 const fs = require("fs");
 const files = fs.readdirSync('./code');
 console.log(files);
-files.forEach(items => {
+files.forEach(item => {
     //判断
-    let data = items.split("-");
+    let data = item.split("-");
     var [num, name] = data;
     if(Number(num) < 10)
     {
         num = 0 + num;
     }
-    data = num + "-" + data[1];
-    console.log(data);
-    fs.rename("./code/" + items, "./code/" + data, err => {
-        if(err){
-            console.log("操作失败！");
-            return;
-        }
-    })
+    newName = num + "-" + data[1];
+    console.log(item);
+    console.log(newName);
+    fs.renameSync(`./code/${item}`, `./code/${newName}`);
 })
 console.log("操作成功!");
