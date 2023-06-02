@@ -1,10 +1,12 @@
 #define initsize 10
+
 typedef struct 
 {
     int *data;
     int MaxSize;
     int length;
 }Seq_list;
+
 
 void IncreaseList(Seq_list *student,int len)
 {
@@ -14,7 +16,8 @@ void IncreaseList(Seq_list *student,int len)
         student->data[i] = p[i];
     }
     student->MaxSize = student->MaxSize + len;
-    free(p); 
+
+    p = NULL; 
 }
 
 void Initlist(Seq_list *student)
@@ -24,40 +27,44 @@ void Initlist(Seq_list *student)
     student->MaxSize = initsize;
 }
 
+
+
 //从此处修改
-int ListDelete(Sqlist *L,int i,int *e){
+int ListDelete(Seq_list *L,int i,int *e){
+    int *p = L->data;
     if(i<1 || i > L->length){
-        return 0;
+        return false;
     }
-    *e = L->data[i-1];
+    *e = *(p + i - 1);
     for(int j = i;j < L->length; j++){
-        L->data[j-1] = L->data[j];
+        *(p+j-1) = *(p+j);
     }
-    L->data[L->length-1] = 0;
+    *(p + L->length - 1) = 0;
     L->length-=1;
-    return 1;
+    p = NULL;
+    return true;
 }
 
-int ListInsert(Sqlist *L,int i,int e)
+int ListInsert(Seq_list *L,int i,int e)
 {
-    if(i < 1 || i > L->length+1 || L->length >= Maxsize){
-        return 0;
+    int *p = L->data;
+    if(i < 1 || i > L->length+1){
+        return false;
+    }
+    else if(L->length >= L->MaxSize){
+        IncreaseList(L,5);
     }
     for(int j = L->length;j >= i ; j--){
-        L->data[j] = L->data[j-1];
+        *(p+j) = *(p+j-1);
     }
-    L->data[i-1] = e;
+    *(p+i-1) = e;
     L->length++;
-    return 1;
+    p = NULL;
+    return true;
 }
 
-void result_display(int result,Sqlist *L){
-    if(result){
-        for (int j = 0;j < L->length;j++){
-            printf("%d ",L->data[j]);
-        }
-    }
-    else{
-        printf("Sorry,The number is fail to inserted!\n");
+void result_display(Seq_list *L){
+    for (int j = 0;j < L->length;j++){
+        printf("%d ",L->data[j]);
     }
 }

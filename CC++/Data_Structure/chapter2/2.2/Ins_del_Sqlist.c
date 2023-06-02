@@ -36,7 +36,7 @@ int main(){
         }
         else{
             printf("%d\n",e);
-            result_display(result,&student);
+            result_display(&student);
         }
     }else if(2 == index){
         printf("Which Place do you want to insert?\n");
@@ -44,7 +44,12 @@ int main(){
         printf("Which value do you want to insert?\n");
         scanf("%d",&e);
         result = ListInsert(&student,i,e);
-        result_display(result,&student);
+        if(!result){
+            printf("Sorry,The number is fail to add!\n");
+        }
+        else{
+            result_display(&student);
+        }
     }else if(0 == test_number){
         printf("Error!\n");
     }

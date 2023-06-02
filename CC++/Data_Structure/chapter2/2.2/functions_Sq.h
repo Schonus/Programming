@@ -41,13 +41,8 @@ int ListInsert(Sqlist *L,int i,int e)
     return 1;
 }
 
-void result_display(int result,Sqlist *L){
-    if(result){
-        for (int j = 0;j < L->length;j++){
-            printf("%d ",L->data[j]);
-        }
-    }
-    else{
-        printf("Sorry,The number is fail to inserted!\n");
+void result_display(Sqlist *L){
+    for (int j = 0;j < L->length;j++){
+        printf("%d ",L->data[j]);
     }
 }
