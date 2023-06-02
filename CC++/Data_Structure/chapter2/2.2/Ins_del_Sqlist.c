@@ -5,13 +5,23 @@ int main(){
     Sqlist student;
     Initlist(&student);
     int index=0;
+    int checkindex=0;
     int test_number=0;
     int result = 0;
     int i = 0,e = 0;
-    // 预设数据
-    for(int k = 1;k <= 10;k++){
-        student.data[k-1]=k;
-        student.length = k;
+    printf("Please input the list:\n");
+    for(int k = 1;k <= Maxsize;k++){
+        if(scanf("%d",&student.data[k-1])){
+            student.length++;
+            if(student.length >= Maxsize || student.data[k-1] == -9999){
+                printf("队列已满\n");
+                break;
+            }
+        }
+        else{
+            fflush(stdin);
+            break;
+        }
     }
     printf("Which do you want to operate? 1 for deleting and 2 for inserting and 0 for exit:\n");
     test_number = scanf("%d",&index);
@@ -26,6 +36,7 @@ int main(){
         }
         else{
             printf("%d\n",e);
+            result_display(result,&student);
         }
     }else if(2 == index){
         printf("Which Place do you want to insert?\n");
