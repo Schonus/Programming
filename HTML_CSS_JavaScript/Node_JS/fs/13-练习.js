@@ -11,7 +11,7 @@ files.forEach(items => {
     }
     data = num + "-" + data[1];
     console.log(data);
-    fs.rename("./code/" + items, data, err => {
+    fs.rename("./code/" + items, "./code/" + data, err => {
         if(err){
             console.log("操作失败！");
             return;
