@@ -23,7 +23,7 @@ int main(){
             break;
         }
     }
-    printf("Which do you want to operate? 1 for deleting and 2 for inserting and 0 for exit:\n");
+    printf("Which do you want to operate? 1 for deleting, 2 for inserting ,3 for GetElement and 0 for exit::\n");
     test_number = scanf("%d",&index);
     if(index==0){
         return 9999;
@@ -49,6 +49,14 @@ int main(){
         }
         else{
             result_display(&student);
+        }
+    }else if (3 == index)
+    {
+        printf("Which place do you want to search?\n");
+        scanf("%d",&i);
+        result = GetElem(&student,i,&e);
+        if(!result){
+            printf("Sorry,The number is fail to search!\n");
         }
     }else if(0 == test_number){
         printf("Error!\n");

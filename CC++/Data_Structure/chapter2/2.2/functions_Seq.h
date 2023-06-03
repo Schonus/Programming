@@ -29,11 +29,10 @@ void Initlist(Seq_list *student)
 
 
 
-//从此处修改
 int ListDelete(Seq_list *L,int i,int *e){
     int *p = L->data;
     if(i<1 || i > L->length){
-        return false;
+        return 0;
     }
     *e = *(p + i - 1);
     for(int j = i;j < L->length; j++){
@@ -42,14 +41,23 @@ int ListDelete(Seq_list *L,int i,int *e){
     *(p + L->length - 1) = 0;
     L->length-=1;
     p = NULL;
-    return true;
+    return 1;
+}
+
+int GetElem(Seq_list *L,int i,int *sd){
+    if(i<1 || i > L->length){
+        return 0;
+    }
+    printf("%d",L->data[i-1]);
+    *sd = L->data[i-1];
+    return 1;
 }
 
 int ListInsert(Seq_list *L,int i,int e)
 {
     int *p = L->data;
     if(i < 1 || i > L->length+1){
-        return false;
+        return 0;
     }
     else if(L->length >= L->MaxSize){
         IncreaseList(L,5);
@@ -60,7 +68,7 @@ int ListInsert(Seq_list *L,int i,int e)
     *(p+i-1) = e;
     L->length++;
     p = NULL;
-    return true;
+    return 1;
 }
 
 void result_display(Seq_list *L){

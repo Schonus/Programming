@@ -15,6 +15,15 @@ void Initlist(Sqlist *L)
     L->length = 0;
 }
 
+int GetElem(Sqlist *L,int i,int *sd){
+    if(i<1 || i > L->length){
+        return false;
+    }
+    printf("%d",L->data[i-1]);
+    *sd = L->data[i-1];
+    return true;
+}
+
 int ListDelete(Sqlist *L,int i,int *e){
     if(i<1 || i > L->length){
         return 0;
