@@ -1,3 +1,4 @@
+#include <stdio.h>
 #define Maxsize 20
 typedef struct 
 {
@@ -16,36 +17,32 @@ void Initlist(Sqlist *L)
 
 int ListDelete(Sqlist *L,int i,int *e){
     if(i<1 || i > L->length){
-        return false;
+        return 0;
     }
     *e = L->data[i-1];
     for(int j = i;j < L->length; j++){
         L->data[j-1] = L->data[j];
     }
     L->data[L->length-1] = 0;
-    return true;
+    L->length-=1;
+    return 1;
 }
 
 int ListInsert(Sqlist *L,int i,int e)
 {
     if(i < 1 || i > L->length+1 || L->length >= Maxsize){
-        return false;
+        return 0;
     }
-    for(int j = i;j < L->length; j++){
+    for(int j = L->length;j >= i ; j--){
         L->data[j] = L->data[j-1];
     }
     L->data[i-1] = e;
-    L->length+=1;
-    return true;
+    L->length++;
+    return 1;
 }
 
-void result_display(int result,Sqlist *L){
-    if(result){
-        for (int j = 0;j < L->length;j++){
-            printf("%d\n",L->data[j]);
-        }
-    }
-    else{
-        printf("Sorry,The number is fail to inserted!\n");
+void result_display(Sqlist *L){
+    for (int j = 0;j < L->length;j++){
+        printf("%d ",L->data[j]);
     }
 }
