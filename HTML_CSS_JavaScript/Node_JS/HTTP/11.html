@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-响应练习</title>
+</head>
+<body>
+    <table>
+        <caption>表格</caption>
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        var tds = document.querySelectorAll("td");
+        tds.forEach(item => {
+            item.onmousemove = function() {
+                this.style.backgroundColor = '#222';
+            }
+            item.onmouseleave = function() {
+                this.style = '';
+            }
+        });
+    </script>
+</body>
+</html>
