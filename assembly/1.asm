@@ -1,3 +1,14 @@
-jmp 2000:0000
-add ax,ax
-jmp 2000:0003
+assume cs:codesg
+
+codesg segment
+
+start: 
+    mov ax,0123H
+    mov bx,0456H
+    add ax,bx
+    add ax,ax
+    mov ax,4C00H
+    int 21h
+
+codesg ends
+end
