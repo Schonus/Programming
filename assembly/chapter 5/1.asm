@@ -2,10 +2,10 @@ assume cs:codesg
 codesg segment
 start:  mov ax,2000H
         mov ds,ax
-        mov al,[0]
-        mov bl,[1]
-        mov cl,[2]
-        mov dl,[3]
+        mov al,ds:0
+        mov bl,ds:1
+        mov cl,ds:2
+        mov dl,ds:3
         mov ax,4C00H
         int 21H
 
