@@ -16,26 +16,22 @@ start:  mov ax,data
         mov ds,ax
         mov ax,table
         mov es,ax
-        mov sp,10H
         mov cx,15H
-        s:  push cx
-            mov bx,0
-            mov cx,2
-            s0: push si
-                add si,si
-                mov ax,word ptr ds:[bx+si]
-                mov word ptr es:[di],ax
-                mov ax,word ptr ds:[bx+si+2]
-                mov word ptr es:[di+2],ax
-                add bx,84
-                add di,5
-                pop si
-            loop s0
-            mov ax,word ptr ds:[bx+si]
-            mov word ptr es:[di],ax
-            add di,6
+        s:  mov bx,si
+            add si,si
+            mov ax,word ptr ds:[si]
+            mov word ptr es:[bp],ax
+            mov ax,word ptr ds:[si+2]
+            mov word ptr es:[bp+2],ax
+            mov ax,word ptr ds:[si+84]
+            mov word ptr es:[bp+5],ax
+            mov ax,word ptr ds:[si+86]
+            mov word ptr es:[bp+7],ax
+            mov si,bx
+            mov ax,word ptr ds:[si+168]
+            mov word ptr es:[bp+10],ax
+            add bp,10H
             add si,2
-            pop cx
         loop s
         mov ax,4C00H
         int 21H
