@@ -1,6 +1,6 @@
 assume cs:code,ds:data,ss:stack
 stack segment
-    db 16 dup 0
+    db 16 dup (0)
 stack ends
 data segment 
     db 77H,2,65H,2,6CH,2,63H,2,6FH,2,6DH,2,65H,2,20H,2,74H,2,6FH,2,20H,2,6DH,2,61H,2,73H,2,6DH,2,21H,2
