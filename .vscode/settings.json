@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
-        "functions_seq.h": "c"
+        "functions_seq.h": "c",
+        "lcd1602.h": "c"
     }
 }

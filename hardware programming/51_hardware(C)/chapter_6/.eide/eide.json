@@ -1,5 +1,5 @@
 {
-  "name": "chapter_5",
+  "name": "chapter_6",
   "type": "C51",
   "dependenceList": [],
   "srcDirs": [
@@ -12,15 +12,11 @@
     "folders": []
   },
   "miscInfo": {
-    "uid": "c061f1b84342ade2d32d2716775c5ca4"
+    "uid": "a28b52a45d84acc017d76d7b5b1ca3e2"
   },
   "targets": {
     "Release": {
-      "excludeList": [
-        "src/modeled try.c",
-        "src/modeled.c",
-        "src/main.c"
-      ],
+      "excludeList": [],
       "toolchain": "Keil_C51",
       "compileConfig": {
         "options": ""
