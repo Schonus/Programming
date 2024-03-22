@@ -1,0 +1,5 @@
+﻿  第四节 函数的声明.cpp
+  LINK : 没有找到 D:\Programming\Visual_Studio22\C++\x64\Debug\第六章 函数.exe 或上一个增量链接没有生成它；正在执行完全链接
+第四节 函数的声明.obj : error LNK2005: "int __cdecl comparing(int,int)" (?comparing@@YAHHH@Z) 已经在 第五节 函数的分文件编写.obj 中定义
+第四节 函数的声明.obj : error LNK2005: main 已经在 第五节 函数的分文件编写.obj 中定义
+D:\Programming\Visual_Studio22\C++\x64\Debug\第六章 函数.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

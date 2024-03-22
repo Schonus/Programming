@@ -1,0 +1,12 @@
+﻿  第一节 整型.cpp
+  第七节 布尔类型.cpp
+  第三节 实型.cpp
+  第二节 sizeof关键字.cpp
+  第五节 转义字符.cpp
+  第八节 数据的输入cin.cpp
+  第六节 字符串.cpp
+  第四节 字符型.cpp
+  正在运行 C/C++ 代码分析...
+  正在生成代码...
+MSVCRTD.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 main，函数 "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 中引用了该符号
+D:\Programming\Visual_Studio22\C++\x64\Debug\第二章 数据类型.exe : fatal error LNK1120: 1 个无法解析的外部命令
