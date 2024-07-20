@@ -1,40 +1,40 @@
-//#include <iostream>
-//using namespace std;
-////Ã°ÅÝÅÅÐòº¯Êý
-//void swap(int* num1, int* num2) /*ÐÎ²Î*/ {
-//	int tempt = 0;
-//	tempt = *num1;
-//	*num1 = *num2;
-//	*num2 = tempt;
-//}
-//void bubblesort(int* array, int length) /*ÐÎ²Î*/ {
-//	int tempt = 0;
-//	for (int i = 1; i < length; i++)
-//	{
-//		for (int j = 0; j < i; j++)
-//		{
-//			//ÅÐ¶Ï
-//			if (array[i] < array[j]) {
-//				swap(array[i], array[j]);
-//			}
-//		}
-//	}
-//}
-//void announce(int* array, int length) /*ÐÎ²Î*/ {
-//	int tempt = 0;
-//	for (int i = 0; i < length; i++)
-//	{
-//		cout << array[i] << endl;
-//	}
-//}
-//int main()
-//{
-//	//1.´´½¨Êý×é
-//	int arr[10] = { 4,2,6,7,8,5,1,3,10,9 };
-//	//2.´´½¨º¯Êý£¬ÊµÏÖÃ°ÅÝÅÅÐò
-//	//3.´ò¿ªÅÅÐòºóµÄÊý×é
-//	bubblesort(arr, sizeof(arr) / sizeof(int));
-//	announce(arr, sizeof(arr) / sizeof(int));
-//	system("pause");
-//	return 0;
-//}
+#include <iostream>
+using namespace std;
+//Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void swap(int* num1, int* num2) /*ï¿½Î²ï¿½*/ {
+	int tempt = 0;
+	tempt = *num1;
+	*num1 = *num2;
+	*num2 = tempt;
+}
+void bubblesort(int* array, int length) /*ï¿½Î²ï¿½*/ {
+	int tempt = 0;
+	for (int i = 1; i < length; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			//ï¿½Ð¶ï¿½
+			if (array[i] < array[j]) {
+				swap(array[i], array[j]);
+			}
+		}
+	}
+}
+void announce(int* array, int length) /*ï¿½Î²ï¿½*/ {
+	int tempt = 0;
+	for (int i = 0; i < length; i++)
+	{
+		cout << array[i] << endl;
+	}
+}
+int main()
+{
+	//1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int arr[10] = { 4,2,6,7,8,5,1,3,10,9 };
+	//2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//3.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	bubblesort(arr, sizeof(arr) / sizeof(int));
+	announce(arr, sizeof(arr) / sizeof(int));
+	system("pause");
+	return 0;
+}

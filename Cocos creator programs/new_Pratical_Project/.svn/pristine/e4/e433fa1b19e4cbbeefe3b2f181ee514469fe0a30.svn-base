@@ -1,0 +1,107 @@
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/Button.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '55e3fMGMCxOHalmCRKDP5Ex', 'Button');
+// resources/script/Button.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+//设置类名，继承游戏设定类
+var Button = /** @class */ (function (_super) {
+    __extends(Button, _super);
+    function Button() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        //感觉把prefab预制件放在这里不是很合理，因为在继承到别的类时，这些元素也会一同继承过去，还需要再拉几次给继承类的property设定指向对象会很麻烦
+        _this.PreTitle = null;
+        _this.PreButton = null;
+        _this.PrePlayer = null;
+        _this.PreEnemyManager = null;
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    Button.prototype.onLoad = function () {
+        var self = this;
+        //设定函数操作
+        var func1 = function (event) {
+            //加载该生成的
+            var nodePlayer = cc.instantiate(self.PrePlayer);
+            var nodeEnemyManager = cc.instantiate(self.PreEnemyManager);
+            //锚定父对象和该删的对象
+            var Parent = cc.find("Canvas/Main Camera");
+            var Title = cc.find("Canvas/Main Camera/Title");
+            //关系绑定
+            nodePlayer.setParent(Parent);
+            nodeEnemyManager.setParent(Parent);
+            //删除title
+            Title.destroy();
+            self.node.destroy();
+        };
+        this.node.on(cc.Node.EventType.MOUSE_UP, func1);
+    };
+    Button.prototype.start = function () {
+    };
+    Button.prototype.update = function (dt) { };
+    Button.prototype.onDestroy = function () {
+        //这里可能有问题
+        this.node.off(cc.Node.EventType.MOUSE_UP);
+    };
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreTitle", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreButton", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PrePlayer", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreEnemyManager", void 0);
+    Button = __decorate([
+        ccclass
+    ], Button);
+    return Button;
+}(cc.Component));
+exports.default = Button;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEJ1dHRvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFFTSxJQUFBLEtBQXNCLEVBQUUsQ0FBQyxVQUFVLEVBQWxDLE9BQU8sYUFBQSxFQUFFLFFBQVEsY0FBaUIsQ0FBQztBQUMxQyxjQUFjO0FBRWQ7SUFBb0MsMEJBQVk7SUFBaEQ7UUFBQSxxRUE4Q0M7UUE3Q0csOEVBQThFO1FBRTlFLGNBQVEsR0FBYSxJQUFJLENBQUM7UUFHMUIsZUFBUyxHQUFhLElBQUksQ0FBQztRQUczQixlQUFTLEdBQWEsSUFBSSxDQUFDO1FBRzNCLHFCQUFlLEdBQWEsSUFBSSxDQUFDOztJQWtDckMsQ0FBQztJQWpDRyx3QkFBd0I7SUFFeEIsdUJBQU0sR0FBTjtRQUVJLElBQUksSUFBSSxHQUFHLElBQUksQ0FBQztRQUNoQixRQUFRO1FBQ1IsSUFBSSxLQUFLLEdBQUcsVUFBUyxLQUFLO1lBQ3RCLFFBQVE7WUFDUixJQUFJLFVBQVUsR0FBRyxFQUFFLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQztZQUNoRCxJQUFJLGdCQUFnQixHQUFHLEVBQUUsQ0FBQyxXQUFXLENBQUMsSUFBSSxDQUFDLGVBQWUsQ0FBQyxDQUFDO1lBQzVELGFBQWE7WUFDYixJQUFJLE1BQU0sR0FBRyxFQUFFLENBQUMsSUFBSSxDQUFDLG9CQUFvQixDQUFDLENBQUM7WUFDM0MsSUFBSSxLQUFLLEdBQUcsRUFBRSxDQUFDLElBQUksQ0FBQywwQkFBMEIsQ0FBQyxDQUFDO1lBQ2hELE1BQU07WUFDTixVQUFVLENBQUMsU0FBUyxDQUFDLE1BQU0sQ0FBQyxDQUFDO1lBQzdCLGdCQUFnQixDQUFDLFNBQVMsQ0FBQyxNQUFNLENBQUMsQ0FBQztZQUNuQyxTQUFTO1lBQ1QsS0FBSyxDQUFDLE9BQU8sRUFBRSxDQUFDO1lBQ2hCLElBQUksQ0FBQyxJQUFJLENBQUMsT0FBTyxFQUFFLENBQUM7UUFFeEIsQ0FBQyxDQUFBO1FBQ0QsSUFBSSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsRUFBRSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFDLEtBQUssQ0FBQyxDQUFDO0lBQ25ELENBQUM7SUFFRCxzQkFBSyxHQUFMO0lBRUEsQ0FBQztJQUVELHVCQUFNLEdBQU4sVUFBUSxFQUFFLElBQUcsQ0FBQztJQUNkLDBCQUFTLEdBQVQ7UUFDSSxTQUFTO1FBQ1QsSUFBSSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUM7SUFDOUMsQ0FBQztJQTFDRDtRQURDLFFBQVEsQ0FBQyxFQUFFLENBQUMsTUFBTSxDQUFDOzRDQUNNO0lBRzFCO1FBREMsUUFBUSxDQUFDLEVBQUUsQ0FBQyxNQUFNLENBQUM7NkNBQ087SUFHM0I7UUFEQyxRQUFRLENBQUMsRUFBRSxDQUFDLE1BQU0sQ0FBQzs2Q0FDTztJQUczQjtRQURDLFFBQVEsQ0FBQyxFQUFFLENBQUMsTUFBTSxDQUFDO21EQUNhO0lBWmhCLE1BQU07UUFEMUIsT0FBTztPQUNhLE1BQU0sQ0E4QzFCO0lBQUQsYUFBQztDQTlDRCxBQThDQyxDQTlDbUMsRUFBRSxDQUFDLFNBQVMsR0E4Qy9DO2tCQTlDb0IsTUFBTSIsImZpbGUiOiIiLCJzb3VyY2VSb290IjoiLyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBHYW1lU2V0dGluZyBmcm9tIFwiLi9HYW1lXCI7XG5cbmNvbnN0IHtjY2NsYXNzLCBwcm9wZXJ0eX0gPSBjYy5fZGVjb3JhdG9yO1xuLy/orr7nva7nsbvlkI3vvIznu6fmib/muLjmiI/orr7lrprnsbtcbkBjY2NsYXNzXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBCdXR0b24gZXh0ZW5kcyBjYy5Db21wb25lbnQge1xuICAgIC8v5oSf6KeJ5oqKcHJlZmFi6aKE5Yi25Lu25pS+5Zyo6L+Z6YeM5LiN5piv5b6I5ZCI55CG77yM5Zug5Li65Zyo57un5om/5Yiw5Yir55qE57G75pe277yM6L+Z5Lqb5YWD57Sg5Lmf5Lya5LiA5ZCM57un5om/6L+H5Y6777yM6L+Y6ZyA6KaB5YaN5ouJ5Yeg5qyh57uZ57un5om/57G755qEcHJvcGVydHnorr7lrprmjIflkJHlr7nosaHkvJrlvojpurvng6ZcbiAgICBAcHJvcGVydHkoY2MuUHJlZmFiKVxuICAgIFByZVRpdGxlOmNjLlByZWZhYiA9IG51bGw7XG4gICAgXG4gICAgQHByb3BlcnR5KGNjLlByZWZhYilcbiAgICBQcmVCdXR0b246Y2MuUHJlZmFiID0gbnVsbDtcbiAgICBcbiAgICBAcHJvcGVydHkoY2MuUHJlZmFiKVxuICAgIFByZVBsYXllcjpjYy5QcmVmYWIgPSBudWxsO1xuXG4gICAgQHByb3BlcnR5KGNjLlByZWZhYilcbiAgICBQcmVFbmVteU1hbmFnZXI6Y2MuUHJlZmFiID0gbnVsbDtcbiAgICAvLyBMSUZFLUNZQ0xFIENBTExCQUNLUzpcblxuICAgIG9uTG9hZCAoKSBcbiAgICB7XG4gICAgICAgIGxldCBzZWxmID0gdGhpcztcbiAgICAgICAgLy/orr7lrprlh73mlbDmk43kvZxcbiAgICAgICAgbGV0IGZ1bmMxID0gZnVuY3Rpb24oZXZlbnQpIHtcbiAgICAgICAgICAgIC8v5Yqg6L296K+l55Sf5oiQ55qEXG4gICAgICAgICAgICBsZXQgbm9kZVBsYXllciA9IGNjLmluc3RhbnRpYXRlKHNlbGYuUHJlUGxheWVyKTtcbiAgICAgICAgICAgIGxldCBub2RlRW5lbXlNYW5hZ2VyID0gY2MuaW5zdGFudGlhdGUoc2VsZi5QcmVFbmVteU1hbmFnZXIpO1xuICAgICAgICAgICAgLy/plJrlrprniLblr7nosaHlkozor6XliKDnmoTlr7nosaFcbiAgICAgICAgICAgIGxldCBQYXJlbnQgPSBjYy5maW5kKFwiQ2FudmFzL01haW4gQ2FtZXJhXCIpO1xuICAgICAgICAgICAgbGV0IFRpdGxlID0gY2MuZmluZChcIkNhbnZhcy9NYWluIENhbWVyYS9UaXRsZVwiKTtcbiAgICAgICAgICAgIC8v5YWz57O757uR5a6aXG4gICAgICAgICAgICBub2RlUGxheWVyLnNldFBhcmVudChQYXJlbnQpO1xuICAgICAgICAgICAgbm9kZUVuZW15TWFuYWdlci5zZXRQYXJlbnQoUGFyZW50KTtcbiAgICAgICAgICAgIC8v5Yig6ZmkdGl0bGVcbiAgICAgICAgICAgIFRpdGxlLmRlc3Ryb3koKTtcbiAgICAgICAgICAgIHNlbGYubm9kZS5kZXN0cm95KCk7XG5cbiAgICAgICAgfVxuICAgICAgICB0aGlzLm5vZGUub24oY2MuTm9kZS5FdmVudFR5cGUuTU9VU0VfVVAsZnVuYzEpO1xuICAgIH1cblxuICAgIHN0YXJ0ICgpIHtcblxuICAgIH1cblxuICAgIHVwZGF0ZSAoZHQpIHt9XG4gICAgb25EZXN0cm95KCkge1xuICAgICAgICAvL+i/memHjOWPr+iDveaciemXrumimFxuICAgICAgICB0aGlzLm5vZGUub2ZmKGNjLk5vZGUuRXZlbnRUeXBlLk1PVVNFX1VQKTtcbiAgICB9XG59XG4iXX0=

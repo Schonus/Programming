@@ -24,93 +24,146 @@ public:
     virtual void storage() = 0;
 };
 
-
+//具体的厂商
 //具体的类
+//Intel厂商
 class IntelCPU :public AbstractCPU
 {
-    IntelCPU() 
+public:
+    virtual void calculate() 
     {
         cout << "Intel的CPU开始计算了" << endl;
     }
 };
 
+//显卡
 class IntelVideoCard :public AbstractVideoCard
 {
-    IntelVideoCard()
+    virtual void display()
     {
-        cout << "Intel的显卡开始计算了" << endl;
+        cout << "Intel的显卡开始显示了" << endl;
+    }
+};
+
+//内存条
+class IntelMemory :public AbstractMemory
+{
+    virtual void storage()
+    {
+        cout << "Intel的内存条开始存储了" << endl;
     }
 };
 
 
 
-//class ADMCPU :public AbstractCPU
-//{
-//    ADMCPU() 
-//    {
-//        cout << "ADM的CPU开始计算了" << endl;
-//    }
-//};
+class ADMCPU :public AbstractCPU
+{
+    ADMCPU() 
+    {
+        cout << "ADM的CPU开始计算了" << endl;
+    }
+};
 
+//联想
+//CPU
 class LenovoCPU :public AbstractCPU
 {
-    LenovoCPU() 
+    virtual void calculate()
     {
-        cout << "联想的CPU开始计算了" << endl;
+        cout << "Lenovo的CPU开始显示了" << endl;
     }
 };
 
-class
-
-class Computer :public AbstractCPU
+//显卡
+class LenovoVideoCard :public AbstractVideoCard
 {
-public:
-    void Working()
+    virtual void display()
     {
-
+        cout << "Lenovo的显卡开始显示了" << endl;
     }
 };
 
-Animal :: ~Animal()  //纯虚析构函数的调用和实现
+//内存条
+class LenovoMemory :public AbstractMemory
 {
-    cout << "Animal 的纯虚析构函数调用" << endl;
-}
+    virtual void storage()
+    {
+        cout << "Lenovo的内存条开始存储了" << endl;
+    }
+};
 
-class Cat : public Animal
+class Computer
 {
 public:
-    Cat()
+    Computer(AbstractCPU* cpuz,AbstractVideoCard* vc,AbstractMemory* mem) 
     {
+        m_cpu = cpuz;
+        m_vc = vc;
+        m_mem = mem;
+    }
 
-    }
-    Cat(string name)
+    //提供一个工作的函数
+    void work() 
     {
-        cout << "Cat 构造函数调用" << endl;
-        m_Name = new string(name);
+        //让零件工作起来，调用接口
+        m_cpu->calculate();
+        m_vc->display();
+        m_mem->storage();
     }
-    void speak()
-    {
 
-        cout << *m_Name << "小猫在说话~" << endl;
-    }
-    string* m_Name;
-    ~Cat()
+    ~Computer() 
     {
-        if (m_Name != NULL)
+        if (m_cpu != NULL)
         {
-            cout << "Cat 析构函数调用" << endl;
-            delete m_Name;
-            m_Name = NULL;
+            //释放CPU
+            delete m_cpu;
+            m_cpu = NULL;
+        }    
+            
+        if (m_vc != NULL)
+        {
+            //释放显卡
+            delete m_vc;
+            m_vc = NULL;
+        }
+        if (m_mem != NULL)
+        {
+            //释放内存条
+            delete m_mem;
+            m_mem = NULL;
         }
     }
+private:
+    AbstractCPU* m_cpu;//CPU的零件指针
+    AbstractVideoCard* m_vc;//显卡的零件指针
+    AbstractMemory* m_mem;//内存条的零件指针
 };
+
 
 //写一个具体的实例
 void test01()
 {
-    Animal* animal = new Cat("Tommy");
-    animal->speak();
-    delete animal;
+    //第一台电脑零件
+    AbstractCPU* intelCPU = new IntelCPU();
+    AbstractVideoCard* intelVideoCard = new IntelVideoCard();
+    AbstractMemory* intelMemory = new IntelMemory();
+
+    //创建第一台电脑
+    Computer* com = new Computer(intelCPU, intelVideoCard, intelMemory);
+    com->work();
+
+    delete com;
+
+    //第二台电脑零件
+    AbstractCPU* lenovoCPU = new LenovoCPU();
+    AbstractVideoCard* lenovoVideoCard = new LenovoVideoCard();
+    AbstractMemory* lenovoMemory = new LenovoMemory();
+
+    //创建第一台电脑
+    Computer* com2 = new Computer(lenovoCPU, lenovoVideoCard, lenovoMemory);
+    com2->work();
+
+    delete com2;
 };
 
 int main()

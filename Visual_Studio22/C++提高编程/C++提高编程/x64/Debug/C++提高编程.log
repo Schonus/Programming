@@ -1,0 +1,3 @@
+﻿  17 string容器_构造函数.cpp
+x64\Debug\person.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+  C++提高编程.vcxproj -> D:\Programming\Visual_Studio22\C++提高编程\C++提高编程\x64\Debug\C++提高编程.exe

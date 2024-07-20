@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "3ccf796f-4e60-409f-b61a-4c1b4ac54bb4",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 656,
+  "height": 180,
+  "platformSettings": {},
+  "subMetas": {
+    "银晨锅炉集团": {
+      "ver": "1.0.6",
+      "uuid": "74d80d51-b526-4c01-88a9-3e35ff8c6051",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "3ccf796f-4e60-409f-b61a-4c1b4ac54bb4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 656,
+      "height": 180,
+      "rawWidth": 656,
+      "rawHeight": 180,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

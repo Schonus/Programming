@@ -1,0 +1,81 @@
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/Background.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '66faaijs8FJWq06sY3lmKO0', 'Background');
+// resources/script/Background.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var Background = /** @class */ (function (_super) {
+    __extends(Background, _super);
+    function Background() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.y_velo = 40; //画布往下翻的速度
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    //被加载时
+    Background.prototype.onLoad = function () { };
+    //被加载后
+    Background.prototype.start = function () {
+    };
+    //每一帧更新时
+    Background.prototype.update = function (dt) {
+        //定义背景往下翻的速率
+        this.node.y -= this.y_velo * dt;
+        //如果往下翻的太多了，就搬回来，保证看起来连贯的效果
+        if (this.node.y <= -852) {
+            this.node.y = 0;
+        }
+    };
+    __decorate([
+        property
+    ], Background.prototype, "y_velo", void 0);
+    Background = __decorate([
+        ccclass
+    ], Background);
+    return Background;
+}(cc.Component));
+exports.default = Background;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEJhY2tncm91bmQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQU0sSUFBQSxLQUFzQixFQUFFLENBQUMsVUFBVSxFQUFsQyxPQUFPLGFBQUEsRUFBRSxRQUFRLGNBQWlCLENBQUM7QUFHMUM7SUFBd0MsOEJBQVk7SUFBcEQ7UUFBQSxxRUFzQkM7UUFuQkcsWUFBTSxHQUFVLEVBQUUsQ0FBQyxDQUFBLFVBQVU7O0lBbUJqQyxDQUFDO0lBbEJHLHdCQUF3QjtJQUN4QixNQUFNO0lBQ04sMkJBQU0sR0FBTixjQUFXLENBQUM7SUFDWixNQUFNO0lBQ04sMEJBQUssR0FBTDtJQUVBLENBQUM7SUFDRCxRQUFRO0lBQ1IsMkJBQU0sR0FBTixVQUFRLEVBQUU7UUFFTixZQUFZO1FBQ1osSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLElBQUksSUFBSSxDQUFDLE1BQU0sR0FBRyxFQUFFLENBQUM7UUFDaEMsMkJBQTJCO1FBQzNCLElBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQyxHQUFHLEVBQ3RCO1lBQ0ksSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDO1NBQ25CO0lBQ0wsQ0FBQztJQWxCRDtRQURDLFFBQVE7OENBQ1U7SUFIRixVQUFVO1FBRDlCLE9BQU87T0FDYSxVQUFVLENBc0I5QjtJQUFELGlCQUFDO0NBdEJELEFBc0JDLENBdEJ1QyxFQUFFLENBQUMsU0FBUyxHQXNCbkQ7a0JBdEJvQixVQUFVIiwiZmlsZSI6IiIsInNvdXJjZVJvb3QiOiIvIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3Qge2NjY2xhc3MsIHByb3BlcnR5fSA9IGNjLl9kZWNvcmF0b3I7XG5cbkBjY2NsYXNzXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBCYWNrZ3JvdW5kIGV4dGVuZHMgY2MuQ29tcG9uZW50IHtcblxuICAgIEBwcm9wZXJ0eVxuICAgIHlfdmVsbzpudW1iZXIgPSA0MDsvL+eUu+W4g+W+gOS4i+e/u+eahOmAn+W6plxuICAgIC8vIExJRkUtQ1lDTEUgQ0FMTEJBQ0tTOlxuICAgIC8v6KKr5Yqg6L295pe2XG4gICAgb25Mb2FkICgpIHt9XG4gICAgLy/ooqvliqDovb3lkI5cbiAgICBzdGFydCAoKSB7XG5cbiAgICB9XG4gICAgLy/mr4/kuIDluKfmm7TmlrDml7ZcbiAgICB1cGRhdGUgKGR0KSBcbiAgICB7XG4gICAgICAgIC8v5a6a5LmJ6IOM5pmv5b6A5LiL57+755qE6YCf546HXG4gICAgICAgIHRoaXMubm9kZS55IC09IHRoaXMueV92ZWxvICogZHQ7XG4gICAgICAgIC8v5aaC5p6c5b6A5LiL57+755qE5aSq5aSa5LqG77yM5bCx5pCs5Zue5p2l77yM5L+d6K+B55yL6LW35p2l6L+e6LSv55qE5pWI5p6cXG4gICAgICAgIGlmKHRoaXMubm9kZS55IDw9IC04NTIpXG4gICAgICAgIHtcbiAgICAgICAgICAgIHRoaXMubm9kZS55ID0gMDtcbiAgICAgICAgfVxuICAgIH1cbn1cbiJdfQ==

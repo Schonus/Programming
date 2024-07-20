@@ -1,0 +1,9 @@
+# ninja log v6
+4	1135	7431483891428280	2_4_autogen/timestamp	fbc0277ac4a9db
+4	1135	7431483891428280	2_4_autogen/mocs_compilation.cpp	fbc0277ac4a9db
+4	1135	7431483891428280	D:/Programming/QT/chapter_2/2_4/build/Desktop_Qt_6_2_4_MinGW_64_bit-Debug/2_4_autogen/timestamp	fbc0277ac4a9db
+4	1135	7431483891428280	D:/Programming/QT/chapter_2/2_4/build/Desktop_Qt_6_2_4_MinGW_64_bit-Debug/2_4_autogen/mocs_compilation.cpp	fbc0277ac4a9db
+1140	3376	7431483892826564	CMakeFiles/2_4.dir/2_4_autogen/mocs_compilation.cpp.obj	caaf7941ad97881c
+1191	3616	7431483893303464	CMakeFiles/2_4.dir/main.cpp.obj	93c8815b614a6883
+1243	3935	7431483893772170	CMakeFiles/2_4.dir/dialog.cpp.obj	954b28b581865fc4
+3935	4449	7431483920825315	2_4.exe	b3197720e12b32af

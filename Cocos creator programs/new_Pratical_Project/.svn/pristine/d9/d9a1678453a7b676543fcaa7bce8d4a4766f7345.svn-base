@@ -1,0 +1,8 @@
+
+require('./assets/resources/script/Background');
+require('./assets/resources/script/BulletControl');
+require('./assets/resources/script/Button');
+require('./assets/resources/script/EnemyControl');
+require('./assets/resources/script/EnemyManager');
+require('./assets/resources/script/Game');
+require('./assets/resources/script/PlayerControl');

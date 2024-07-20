@@ -1,0 +1,37 @@
+﻿  try.cpp
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(88,5): error C2653: “Excel”: 不是类或命名空间名称
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(88,12): error C2065: “_ApplicationPtr”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(88,28): error C2146: 语法错误: 缺少“;”(在标识符“pExcel”的前面)
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(88,28): error C2065: “pExcel”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(89,44): error C2653: “Excel”: 不是类或命名空间名称
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(89,51): error C2065: “Application”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(89,92): error C2065: “pExcel”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(89,18): error C2660: “CoCreateInstance”: 函数不接受 3 个参数
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\combaseapi.h(1037,1):
+  参见“CoCreateInstance”的声明
+  D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(89,18):
+  尝试匹配参数列表“()”时
+  
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(97,5): error C2653: “Excel”: 不是类或命名空间名称
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(97,12): error C2065: “_WorkbookPtr”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(97,25): error C2146: 语法错误: 缺少“;”(在标识符“pWorkbook”的前面)
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(97,25): error C2065: “pWorkbook”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(97,37): error C2065: “pExcel”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(97,60): error C2653: “Excel”: 不是类或命名空间名称
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(97,67): error C2065: “xlWorksheet”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(100,5): error C2653: “Excel”: 不是类或命名空间名称
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(100,12): error C2065: “_WorksheetPtr”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(100,26): error C2146: 语法错误: 缺少“;”(在标识符“pWorksheet”的前面)
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(100,26): error C2065: “pWorksheet”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(100,39): error C2065: “pWorkbook”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(103,5): error C2065: “pWorksheet”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(103,31): error C3861: “_variant_t”: 找不到标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(104,5): error C2065: “pWorksheet”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(104,31): error C3861: “_variant_t”: 找不到标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(108,5): error C2065: “pWorkbook”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(108,23): error C3861: “_bstr_t”: 找不到标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(111,5): error C2065: “pWorkbook”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(112,5): error C2065: “pExcel”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(115,5): error C2065: “pWorksheet”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(116,5): error C2065: “pWorkbook”: 未声明的标识符
+D:\Programming\Visual_Studio22\MFC\try\try\try\try.cpp(117,5): error C2065: “pExcel”: 未声明的标识符

@@ -1,0 +1,718 @@
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/__qc_index__.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}
+require('./assets/resources/script/Background');
+require('./assets/resources/script/BulletControl');
+require('./assets/resources/script/Button');
+require('./assets/resources/script/EnemyControl');
+require('./assets/resources/script/EnemyManager');
+require('./assets/resources/script/Game');
+require('./assets/resources/script/PlayerControl');
+
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//------QC-SOURCE-SPLIT------
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/EnemyControl.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '1b2f3vJ9gxK77wTmVKpLpxl', 'EnemyControl');
+// resources/script/EnemyControl.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var EnemyControl = /** @class */ (function (_super) {
+    __extends(EnemyControl, _super);
+    //编写类名
+    function EnemyControl() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.Enemy_v = 40;
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    EnemyControl.prototype.onLoad = function () { };
+    EnemyControl.prototype.start = function () {
+    };
+    EnemyControl.prototype.update = function (dt) {
+        this.node.y -= this.Enemy_v * dt;
+        if (this.node.y < -440) {
+            this.node.destroy();
+        }
+    };
+    //死亡
+    EnemyControl.prototype.die = function () {
+        this.node.destroy();
+    };
+    __decorate([
+        property
+    ], EnemyControl.prototype, "Enemy_v", void 0);
+    EnemyControl = __decorate([
+        ccclass
+        //编写类名
+    ], EnemyControl);
+    return EnemyControl;
+}(cc.Component));
+exports.default = EnemyControl;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEVuZW15Q29udHJvbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBTSxJQUFBLEtBQXNCLEVBQUUsQ0FBQyxVQUFVLEVBQWxDLE9BQU8sYUFBQSxFQUFFLFFBQVEsY0FBaUIsQ0FBQztBQUkxQztJQUEwQyxnQ0FBWTtJQUR0RCxNQUFNO0lBQ047UUFBQSxxRUEyQkM7UUF4QkcsYUFBTyxHQUFVLEVBQUUsQ0FBQzs7SUF3QnhCLENBQUM7SUF0Qkcsd0JBQXdCO0lBRXhCLDZCQUFNLEdBQU4sY0FBVyxDQUFDO0lBRVosNEJBQUssR0FBTDtJQUVBLENBQUM7SUFFRCw2QkFBTSxHQUFOLFVBQVEsRUFBRTtRQUVOLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQyxJQUFJLElBQUksQ0FBQyxPQUFPLEdBQUcsRUFBRSxDQUFDO1FBQ2pDLElBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLEdBQUcsQ0FBQyxHQUFHLEVBQ3JCO1lBQ0ksSUFBSSxDQUFDLElBQUksQ0FBQyxPQUFPLEVBQUUsQ0FBQztTQUN2QjtJQUNMLENBQUM7SUFFRCxJQUFJO0lBQ0osMEJBQUcsR0FBSDtRQUVJLElBQUksQ0FBQyxJQUFJLENBQUMsT0FBTyxFQUFFLENBQUM7SUFDeEIsQ0FBQztJQXZCRDtRQURDLFFBQVE7aURBQ1c7SUFISCxZQUFZO1FBRmhDLE9BQU87UUFDUixNQUFNO09BQ2UsWUFBWSxDQTJCaEM7SUFBRCxtQkFBQztDQTNCRCxBQTJCQyxDQTNCeUMsRUFBRSxDQUFDLFNBQVMsR0EyQnJEO2tCQTNCb0IsWUFBWSIsImZpbGUiOiIiLCJzb3VyY2VSb290IjoiLyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IHtjY2NsYXNzLCBwcm9wZXJ0eX0gPSBjYy5fZGVjb3JhdG9yO1xyXG5cclxuQGNjY2xhc3NcclxuLy/nvJblhpnnsbvlkI1cclxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgRW5lbXlDb250cm9sIGV4dGVuZHMgY2MuQ29tcG9uZW50IHtcclxuXHJcbiAgICBAcHJvcGVydHlcclxuICAgIEVuZW15X3Y6bnVtYmVyID0gNDA7XHJcblxyXG4gICAgLy8gTElGRS1DWUNMRSBDQUxMQkFDS1M6XHJcblxyXG4gICAgb25Mb2FkICgpIHt9XHJcblxyXG4gICAgc3RhcnQgKCkge1xyXG5cclxuICAgIH1cclxuXHJcbiAgICB1cGRhdGUgKGR0KSBcclxuICAgIHtcclxuICAgICAgICB0aGlzLm5vZGUueSAtPSB0aGlzLkVuZW15X3YgKiBkdDtcclxuICAgICAgICBpZih0aGlzLm5vZGUueSA8IC00NDApXHJcbiAgICAgICAge1xyXG4gICAgICAgICAgICB0aGlzLm5vZGUuZGVzdHJveSgpO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAvL+atu+S6oVxyXG4gICAgZGllKClcclxuICAgIHtcclxuICAgICAgICB0aGlzLm5vZGUuZGVzdHJveSgpO1xyXG4gICAgfVxyXG59XHJcbiJdfQ==
+//------QC-SOURCE-SPLIT------
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/EnemyManager.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '8cc932PfehIkIA4aGg3e8Ob', 'EnemyManager');
+// resources/script/EnemyManager.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var EnemyManager = /** @class */ (function (_super) {
+    __extends(EnemyManager, _super);
+    function EnemyManager() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.PreEnemy = null;
+        _this.text = 'hello';
+        return _this;
+        // update (dt) {}
+    }
+    // LIFE-CYCLE CALLBACKS:
+    // onLoad () {}
+    EnemyManager.prototype.start = function () {
+        var _this = this;
+        this.schedule(function () {
+            //创建敌机
+            var Enemy = cc.instantiate(_this.PreEnemy);
+            Enemy.setParent(cc.find("Canvas/Main Camera"));
+            Enemy.y = _this.node.y;
+            Enemy.x = (Math.random() - 0.5) * 380 + 20;
+        }, 2);
+    };
+    __decorate([
+        property(cc.Prefab)
+    ], EnemyManager.prototype, "PreEnemy", void 0);
+    __decorate([
+        property
+    ], EnemyManager.prototype, "text", void 0);
+    EnemyManager = __decorate([
+        ccclass
+    ], EnemyManager);
+    return EnemyManager;
+}(cc.Component));
+exports.default = EnemyManager;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEVuZW15TWFuYWdlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBTSxJQUFBLEtBQXNCLEVBQUUsQ0FBQyxVQUFVLEVBQWxDLE9BQU8sYUFBQSxFQUFFLFFBQVEsY0FBaUIsQ0FBQztBQUcxQztJQUEwQyxnQ0FBWTtJQUF0RDtRQUFBLHFFQXdCQztRQXJCRyxjQUFRLEdBQWMsSUFBSSxDQUFDO1FBRzNCLFVBQUksR0FBVyxPQUFPLENBQUM7O1FBaUJ2QixpQkFBaUI7SUFDckIsQ0FBQztJQWhCRyx3QkFBd0I7SUFFeEIsZUFBZTtJQUVmLDRCQUFLLEdBQUw7UUFBQSxpQkFTQztRQVJHLElBQUksQ0FBQyxRQUFRLENBQUM7WUFFVixNQUFNO1lBQ04sSUFBSSxLQUFLLEdBQUcsRUFBRSxDQUFDLFdBQVcsQ0FBQyxLQUFJLENBQUMsUUFBUSxDQUFDLENBQUM7WUFDMUMsS0FBSyxDQUFDLFNBQVMsQ0FBQyxFQUFFLENBQUMsSUFBSSxDQUFDLG9CQUFvQixDQUFDLENBQUMsQ0FBQztZQUMvQyxLQUFLLENBQUMsQ0FBQyxHQUFHLEtBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDO1lBQ3RCLEtBQUssQ0FBQyxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsTUFBTSxFQUFFLEdBQUMsR0FBRyxDQUFDLEdBQUcsR0FBRyxHQUFHLEVBQUUsQ0FBQztRQUM3QyxDQUFDLEVBQUMsQ0FBQyxDQUFDLENBQUM7SUFDVCxDQUFDO0lBbEJEO1FBREMsUUFBUSxDQUFDLEVBQUUsQ0FBQyxNQUFNLENBQUM7a0RBQ087SUFHM0I7UUFEQyxRQUFROzhDQUNjO0lBTk4sWUFBWTtRQURoQyxPQUFPO09BQ2EsWUFBWSxDQXdCaEM7SUFBRCxtQkFBQztDQXhCRCxBQXdCQyxDQXhCeUMsRUFBRSxDQUFDLFNBQVMsR0F3QnJEO2tCQXhCb0IsWUFBWSIsImZpbGUiOiIiLCJzb3VyY2VSb290IjoiLyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IHtjY2NsYXNzLCBwcm9wZXJ0eX0gPSBjYy5fZGVjb3JhdG9yO1xuXG5AY2NjbGFzc1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgRW5lbXlNYW5hZ2VyIGV4dGVuZHMgY2MuQ29tcG9uZW50IHtcblxuICAgIEBwcm9wZXJ0eShjYy5QcmVmYWIpXG4gICAgUHJlRW5lbXk6IGNjLlByZWZhYiA9IG51bGw7XG5cbiAgICBAcHJvcGVydHlcbiAgICB0ZXh0OiBzdHJpbmcgPSAnaGVsbG8nO1xuXG4gICAgLy8gTElGRS1DWUNMRSBDQUxMQkFDS1M6XG5cbiAgICAvLyBvbkxvYWQgKCkge31cblxuICAgIHN0YXJ0ICgpIHtcbiAgICAgICAgdGhpcy5zY2hlZHVsZSgoKT0+XG4gICAgICAgIHtcbiAgICAgICAgICAgIC8v5Yib5bu65pWM5py6XG4gICAgICAgICAgICBsZXQgRW5lbXkgPSBjYy5pbnN0YW50aWF0ZSh0aGlzLlByZUVuZW15KTtcbiAgICAgICAgICAgIEVuZW15LnNldFBhcmVudChjYy5maW5kKFwiQ2FudmFzL01haW4gQ2FtZXJhXCIpKTtcbiAgICAgICAgICAgIEVuZW15LnkgPSB0aGlzLm5vZGUueTtcbiAgICAgICAgICAgIEVuZW15LnggPSAoTWF0aC5yYW5kb20oKS0wLjUpICogMzgwICsgMjA7XG4gICAgICAgIH0sMik7XG4gICAgfVxuXG4gICAgLy8gdXBkYXRlIChkdCkge31cbn1cbiJdfQ==
+//------QC-SOURCE-SPLIT------
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/PlayerControl.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '68b8bWeh6hKN7B/9QkAAK7e', 'PlayerControl');
+// resources/script/PlayerControl.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var PlayerControl = /** @class */ (function (_super) {
+    __extends(PlayerControl, _super);
+    function PlayerControl() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        //定义飞机速度
+        _this.speedX = 0;
+        _this.speedY = 0;
+        //加载子弹控件
+        _this.PreBullet = null;
+        return _this;
+    }
+    PlayerControl.prototype.onLoad = function () {
+        var self = this;
+        //————————————————————飞机移动部分——————————————————————
+        // 设定移动和静止函数操作，习惯把实现函数写在外面
+        //飞机移动
+        var func1 = function (event) {
+            // 判断输入的是哪个键
+            switch (event.keyCode) {
+                case 37: //左键
+                case 65: //a
+                    self.speedX = -200;
+                    break;
+                case 39: //右键
+                case 68: //d
+                    self.speedX = 200;
+                    break;
+                case 38: //上键
+                case 87: //w
+                    self.speedY = +200;
+                    break;
+                case 40: //下键
+                case 83: //s
+                    self.speedY = -200;
+                    break;
+                default:
+                    break;
+            }
+        };
+        //飞机停止
+        var func2 = function (event) {
+            // 判断输入的是哪个键
+            switch (event.keyCode) {
+                case 37: //左键
+                case 65: //a
+                    if (self.speedX < 0) {
+                        self.speedX = 0;
+                    }
+                    break;
+                case 39: //右键
+                case 68: //d
+                    if (self.speedX > 0) {
+                        self.speedX = 0;
+                    }
+                    break;
+                case 38: //上键
+                case 87: //w
+                    if (self.speedY > 0) {
+                        self.speedY = 0;
+                    }
+                    break;
+                case 40: //下键
+                case 83: //s
+                    if (self.speedY < 0) {
+                        self.speedY = 0;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        };
+        //键盘监听函数
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, func1);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, func2);
+        //玩家攻击
+        // 外面定义函数
+        var func3 = function (event) {
+            var bullet = cc.instantiate(self.PreBullet);
+            //为什么这里会出null
+            if (bullet != null) {
+                bullet.setParent(cc.find("Canvas/Main Camera"));
+                bullet.x = this.node.x;
+                bullet.y = this.node.y;
+            }
+        };
+        //定义函数
+        this.schedule(func3, 0.5);
+    };
+    PlayerControl.prototype.start = function () {
+        //————————————————————飞机碰撞箱部分————————————————————
+        cc.director.getCollisionManager().enabled = true;
+    };
+    //产生碰撞
+    PlayerControl.prototype.onCollisionEnter = function (other) {
+    };
+    PlayerControl.prototype.update = function (dt) {
+        //玩家移动
+        //边框判定和实现X、Y轴位移
+        if (((this.node.x >= -190) && (this.speedX < 0)) || ((this.node.x <= 190) && (this.speedX > 0))) {
+            this.node.x += this.speedX * dt;
+        }
+        //Y轴与X轴同理
+        if (((this.node.y >= -364) && (this.speedY < 0)) || ((this.node.y <= 364) && (this.speedY > 0))) {
+            this.node.y += this.speedY * dt;
+        }
+    };
+    PlayerControl.prototype.onDestroy = function () {
+        //这里可能有问题
+        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN);
+        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP);
+    };
+    __decorate([
+        property
+    ], PlayerControl.prototype, "speedX", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], PlayerControl.prototype, "PreBullet", void 0);
+    PlayerControl = __decorate([
+        ccclass
+    ], PlayerControl);
+    return PlayerControl;
+}(cc.Component));
+exports.default = PlayerControl;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXFBsYXllckNvbnRyb2wudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQU0sSUFBQSxLQUFzQixFQUFFLENBQUMsVUFBVSxFQUFsQyxPQUFPLGFBQUEsRUFBRSxRQUFRLGNBQWlCLENBQUM7QUFHMUM7SUFBMkMsaUNBQVk7SUFBdkQ7UUFBQSxxRUFvSUM7UUFsSUcsUUFBUTtRQUVSLFlBQU0sR0FBVyxDQUFDLENBQUM7UUFDbkIsWUFBTSxHQUFXLENBQUMsQ0FBQztRQUVuQixRQUFRO1FBRVIsZUFBUyxHQUFhLElBQUksQ0FBQzs7SUEySC9CLENBQUM7SUF4SEcsOEJBQU0sR0FBTjtRQUVJLElBQUksSUFBSSxHQUFHLElBQUksQ0FBQztRQUNoQixrREFBa0Q7UUFDbEQsMEJBQTBCO1FBQzFCLE1BQU07UUFDTixJQUFJLEtBQUssR0FBRyxVQUFTLEtBQUs7WUFDdEIsWUFBWTtZQUNaLFFBQVEsS0FBSyxDQUFDLE9BQU8sRUFBRTtnQkFDbkIsS0FBSyxFQUFFLENBQUMsQ0FBQSxJQUFJO2dCQUNaLEtBQUssRUFBRSxFQUFDLEdBQUc7b0JBQ1AsSUFBSSxDQUFDLE1BQU0sR0FBRyxDQUFDLEdBQUcsQ0FBQztvQkFDbkIsTUFBTTtnQkFDVixLQUFLLEVBQUUsQ0FBQyxDQUFBLElBQUk7Z0JBQ1osS0FBSyxFQUFFLEVBQUMsR0FBRztvQkFDUCxJQUFJLENBQUMsTUFBTSxHQUFHLEdBQUcsQ0FBQztvQkFDbEIsTUFBTTtnQkFDVixLQUFLLEVBQUUsQ0FBQyxDQUFBLElBQUk7Z0JBQ1osS0FBSyxFQUFFLEVBQUMsR0FBRztvQkFDUCxJQUFJLENBQUMsTUFBTSxHQUFHLENBQUMsR0FBRyxDQUFDO29CQUN2QixNQUFNO2dCQUNOLEtBQUssRUFBRSxDQUFDLENBQUEsSUFBSTtnQkFDWixLQUFLLEVBQUUsRUFBQyxHQUFHO29CQUNQLElBQUksQ0FBQyxN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LElBQUksQ0FBQyxNQUFNLEdBQUcsQ0FBQyxDQUFFLENBQUUsRUFDakc7WUFDSSxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUMsSUFBSSxJQUFJLENBQUMsTUFBTSxHQUFHLEVBQUUsQ0FBQztTQUNuQztRQUNELFNBQVM7UUFDVCxJQUFHLENBQUUsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLE1BQU0sR0FBRyxDQUFDLENBQUMsQ0FBRSxJQUFFLENBQUUsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUMsSUFBSSxHQUFHLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxNQUFNLEdBQUcsQ0FBQyxDQUFFLENBQUUsRUFDakc7WUFDSSxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUMsSUFBSSxJQUFJLENBQUMsTUFBTSxHQUFHLEVBQUUsQ0FBQztTQUNuQztJQUdMLENBQUM7SUFDRCxpQ0FBUyxHQUFUO1FBQ0ksU0FBUztRQUNULEVBQUUsQ0FBQyxXQUFXLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxXQUFXLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxDQUFDO1FBQ3RELEVBQUUsQ0FBQyxXQUFXLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxXQUFXLENBQUMsU0FBUyxDQUFDLE1BQU0sQ0FBQyxDQUFDO0lBQ3hELENBQUM7SUEvSEQ7UUFEQyxRQUFRO2lEQUNVO0lBS25CO1FBREMsUUFBUSxDQUFDLEVBQUUsQ0FBQyxNQUFNLENBQUM7b0RBQ087SUFUVixhQUFhO1FBRGpDLE9BQU87T0FDYSxhQUFhLENBb0lqQztJQUFELG9CQUFDO0NBcElELEFBb0lDLENBcEkwQyxFQUFFLENBQUMsU0FBUyxHQW9JdEQ7a0JBcElvQixhQUFhIiwiZmlsZSI6IiIsInNvdXJjZVJvb3QiOiIvIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3Qge2NjY2xhc3MsIHByb3BlcnR5fSA9IGNjLl9kZWNvcmF0b3I7XG5cbkBjY2NsYXNzXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBQbGF5ZXJDb250cm9sIGV4dGVuZHMgY2MuQ29tcG9uZW50IHtcblxuICAgIC8v5a6a5LmJ6aOe5py66YCf5bqmXG4gICAgQHByb3BlcnR5XG4gICAgc3BlZWRYOiBudW1iZXIgPSAwO1xuICAgIHNwZWVkWTogbnVtYmVyID0gMDtcblxuICAgIC8v5Yqg6L295a2Q5by55o6n5Lu2XG4gICAgQHByb3BlcnR5KGNjLlByZWZhYilcbiAgICBQcmVCdWxsZXQ6Y2MuUHJlZmFiID0gbnVsbDtcblxuXG4gICAgb25Mb2FkICgpIFxuICAgIHtcbiAgICAgICAgbGV0IHNlbGYgPSB0aGlzO1xuICAgICAgICAvL+KAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOmjnuacuuenu+WKqOmDqOWIhuKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlFxuICAgICAgICAvLyDorr7lrprnp7vliqjlkozpnZnmraLlh73mlbDmk43kvZzvvIzkuaDmg6/miorlrp7njrDlh73mlbDlhpnlnKjlpJbpnaJcbiAgICAgICAgLy/po57mnLrnp7vliqhcbiAgICAgICAgbGV0IGZ1bmMxID0gZnVuY3Rpb24oZXZlbnQpIHtcbiAgICAgICAgICAgIC8vIOWIpOaWrei+k+WFpeeahOaYr+WTquS4qumUrlxuICAgICAgICAgICAgc3dpdGNoIChldmVudC5rZXlDb2RlKSB7XG4gICAgICAgICAgICAgICAgY2FzZSAzNzovL+W3pumUrlxuICAgICAgICAgICAgICAgIGNhc2UgNjU6Ly9hXG4gICAgICAgICAgICAgICAgICAgIHNlbGYuc3BlZWRYID0gLTIwMDtcbiAgICAgICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICAgICAgY2FzZSAzOTovL+WPs+mUrlxuICAgICAgICAgICAgICAgIGNhc2UgNjg6Ly9kXG4gICAgICAgICAgICAgICAgICAgIHNlbGYuc3BlZWRYID0gMjAwO1xuICAgICAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgICAgICBjYXNlIDM4Oi8v5LiK6ZSuXG4gICAgICAgICAgICAgICAgY2FzZSA4NzovL3dcbiAgICAgICAgICAgICAgICAgICAgc2VsZi5zcGVlZFkgPSArMjAwO1xuICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgICAgIGNhc2UgNDA6Ly/kuIvplK5cbiAgICAgICAgICAgICAgICBjYXNlIDgzOi8vc1xuICAgICAgICAgICAgICAgICAgICBzZWxmLnNwZWVkWSA9IC0yMDA7XG4gICAgICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgICAgIGRlZmF1bHQ6XG4gICAgICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIC8v6aOe5py65YGc5q2iXG4gICAgICAgIGxldCBmdW5jMiA9IGZ1bmN0aW9uKGV2ZW50KSB7XG4gICAgICAgICAgICAvLyDliKTmlq3ovpPlhaXnmoTmmK/lk6rkuKrplK5cbiAgICAgICAgICAgIHN3aXRjaCAoZXZlbnQua2V5Q29kZSkge1xuICAgICAgICAgICAgICAgIGNhc2UgMzc6Ly/lt6bplK5cbiAgICAgICAgICAgICAgICBjYXNlIDY1Oi8vYVxuICAgICAgICAgICAgICAgICAgICBpZihzZWxmLnNwZWVkWCA8IDApXG4gICAgICAgICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHNlbGYuc3BlZWRYID0gMDtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgICAgICBjYXNlIDM5Oi8v5Y+z6ZSuXG4gICAgICAgICAgICAgICAgY2FzZSA2ODovL2RcbiAgICAgICAgICAgICAgICAgICAgaWYoc2VsZi5zcGVlZFggPiAwKVxuICAgICAgICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgICAgICAgICBzZWxmLnNwZWVkWCA9IDA7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICAgICAgY2FzZSAzODovL+S4iumUrlxuICAgICAgICAgICAgICAgIGNhc2UgODc6Ly93XG4gICAgICAgICAgICAgICAgICAgIGlmKHNlbGYuc3BlZWRZID4gMClcbiAgICAgICAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgICAgICAgICAgc2VsZi5zcGVlZFkgPSAwO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICAgICAgY2FzZSA0MDovL+S4i+mUrlxuICAgICAgICAgICAgICAgIGNhc2UgODM6Ly9zXG4gICAgICAgICAgICAgICAgICAgIGlmKHNlbGYuc3BlZWRZIDwgMClcbiAgICAgICAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgICAgICAgICAgc2VsZi5zcGVlZFkgPSAwO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgICAgIGRlZmF1bHQ6XG4gICAgICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIC8v6ZSu55uY55uR5ZCs5Ye95pWwXG4gICAgICAgIGNjLnN5c3RlbUV2ZW50Lm9uKGNjLlN5c3RlbUV2ZW50LkV2ZW50VHlwZS5LRVlfRE9XTixmdW5jMSk7XG4gICAgICAgIGNjLnN5c3RlbUV2ZW50Lm9uKGNjLlN5c3RlbUV2ZW50LkV2ZW50VHlwZS5LRVlfVVAsZnVuYzIpO1xuICAgICAgICAvL+eOqeWutuaUu+WHu1xuICAgICAgICAvLyDlpJbpnaLlrprkuYnlh73mlbBcbiAgICAgICAgbGV0IGZ1bmMzID0gZnVuY3Rpb24oZXZlbnQpXG4gICAgICAgIHtcbiAgICAgICAgICAgIGxldCBidWxsZXQgPSBjYy5pbnN0YW50aWF0ZShzZWxmLlByZUJ1bGxldCk7XG4gICAgICAgICAgICAvL+S4uuS7gOS5iOi/memHjOS8muWHum51bGxcbiAgICAgICAgICAgIGlmKGJ1bGxldCAhPSBudWxsKVxuICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIGJ1bGxldC5zZXRQYXJlbnQoY2MuZmluZChcIkNhbnZhcy9NYWluIENhbWVyYVwiKSk7XG4gICAgICAgICAgICAgICAgYnVsbGV0LnggPSB0aGlzLm5vZGUueDtcbiAgICAgICAgICAgICAgICBidWxsZXQueSA9IHRoaXMubm9kZS55O1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIC8v5a6a5LmJ5Ye95pWwXG4gICAgICAgIHRoaXMuc2NoZWR1bGUoZnVuYzMsMC41KTtcblxuICAgICAgICBcbiAgICB9XG4gICAgXG4gICAgc3RhcnQgKCkge1xuICAgICAgICAvL+KAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOmjnuacuueisOaSnueusemDqOWIhuKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlOKAlFxuICAgICAgICBjYy5kaXJlY3Rvci5nZXRDb2xsaXNpb25NYW5hZ2VyKCkuZW5hYmxlZCA9IHRydWU7XG5cbiAgICB9XG5cbiAgICAvL+S6p+eUn+eisOaSnlxuICAgIG9uQ29sbGlzaW9uRW50ZXIob3RoZXIpXG4gICAge1xuICAgICAgICBcbiAgICB9XG5cbiAgICB1cGRhdGUgKGR0KSBcbiAgICB7XG4gICAgICAgIC8v546p5a6256e75YqoXG4gICAgICAgIC8v6L655qGG5Yik5a6a5ZKM5a6e546wWOOAgVnovbTkvY3np7tcbiAgICAgICAgaWYoKCAodGhpcy5ub2RlLnggPj0gLTE5MCkgJiYgKHRoaXMuc3BlZWRYIDwgMCkgKXx8KCAodGhpcy5ub2RlLnggPD0gMTkwKSAmJiAodGhpcy5zcGVlZFggPiAwICkgKSlcbiAgICAgICAge1xuICAgICAgICAgICAgdGhpcy5ub2RlLnggKz0gdGhpcy5zcGVlZFggKiBkdDtcbiAgICAgICAgfVxuICAgICAgICAvL1novbTkuI5Y6L205ZCM55CGXG4gICAgICAgIGlmKCggKHRoaXMubm9kZS55ID49IC0zNjQpICYmICh0aGlzLnNwZWVkWSA8IDApICl8fCggKHRoaXMubm9kZS55IDw9IDM2NCkgJiYgKHRoaXMuc3BlZWRZID4gMCApICkpXG4gICAgICAgIHtcbiAgICAgICAgICAgIHRoaXMubm9kZS55ICs9IHRoaXMuc3BlZWRZICogZHQ7XG4gICAgICAgIH1cblxuICAgICAgICBcbiAgICB9XG4gICAgb25EZXN0cm95KCkge1xuICAgICAgICAvL+i/memHjOWPr+iDveaciemXrumimFxuICAgICAgICBjYy5zeXN0ZW1FdmVudC5vZmYoY2MuU3lzdGVtRXZlbnQuRXZlbnRUeXBlLktFWV9ET1dOKTtcbiAgICAgICAgY2Muc3lzdGVtRXZlbnQub2ZmKGNjLlN5c3RlbUV2ZW50LkV2ZW50VHlwZS5LRVlfVVApO1xuICAgIH1cbn1cbiJdfQ==
+//------QC-SOURCE-SPLIT------
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/Game.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '400f2mhU+1C17E1JnemFmmk', 'Game');
+// resources/script/Game.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var GameSetting = /** @class */ (function (_super) {
+    __extends(GameSetting, _super);
+    //编写类名
+    function GameSetting() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    GameSetting.prototype.onLoad = function () { };
+    GameSetting.prototype.start = function () {
+    };
+    GameSetting = __decorate([
+        ccclass
+        //编写类名
+    ], GameSetting);
+    return GameSetting;
+}(cc.Component));
+exports.default = GameSetting;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEdhbWUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQU0sSUFBQSxLQUFzQixFQUFFLENBQUMsVUFBVSxFQUFsQyxPQUFPLGFBQUEsRUFBRSxRQUFRLGNBQWlCLENBQUM7QUFJMUM7SUFBeUMsK0JBQVk7SUFEckQsTUFBTTtJQUNOOztJQVlBLENBQUM7SUFURyx3QkFBd0I7SUFFeEIsNEJBQU0sR0FBTixjQUFXLENBQUM7SUFFWiwyQkFBSyxHQUFMO0lBRUEsQ0FBQztJQVRnQixXQUFXO1FBRi9CLE9BQU87UUFDUixNQUFNO09BQ2UsV0FBVyxDQVkvQjtJQUFELGtCQUFDO0NBWkQsQUFZQyxDQVp3QyxFQUFFLENBQUMsU0FBUyxHQVlwRDtrQkFab0IsV0FBVyIsImZpbGUiOiIiLCJzb3VyY2VSb290IjoiLyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IHtjY2NsYXNzLCBwcm9wZXJ0eX0gPSBjYy5fZGVjb3JhdG9yO1xuXG5AY2NjbGFzc1xuLy/nvJblhpnnsbvlkI1cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEdhbWVTZXR0aW5nIGV4dGVuZHMgY2MuQ29tcG9uZW50IHtcblxuXG4gICAgLy8gTElGRS1DWUNMRSBDQUxMQkFDS1M6XG5cbiAgICBvbkxvYWQgKCkge31cblxuICAgIHN0YXJ0ICgpIHtcblxuICAgIH1cblxuICAgIC8vIHVwZGF0ZSAoZHQpIHt9XG59XG4iXX0=
+//------QC-SOURCE-SPLIT------
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/Background.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '66faaijs8FJWq06sY3lmKO0', 'Background');
+// resources/script/Background.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var Background = /** @class */ (function (_super) {
+    __extends(Background, _super);
+    function Background() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.y_velo = 40; //画布往下翻的速度
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    //被加载时
+    Background.prototype.onLoad = function () { };
+    //被加载后
+    Background.prototype.start = function () {
+    };
+    //每一帧更新时
+    Background.prototype.update = function (dt) {
+        //定义背景往下翻的速率
+        this.node.y -= this.y_velo * dt;
+        //如果往下翻的太多了，就搬回来，保证看起来连贯的效果
+        if (this.node.y <= -852) {
+            this.node.y = 0;
+        }
+    };
+    __decorate([
+        property
+    ], Background.prototype, "y_velo", void 0);
+    Background = __decorate([
+        ccclass
+    ], Background);
+    return Background;
+}(cc.Component));
+exports.default = Background;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEJhY2tncm91bmQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQU0sSUFBQSxLQUFzQixFQUFFLENBQUMsVUFBVSxFQUFsQyxPQUFPLGFBQUEsRUFBRSxRQUFRLGNBQWlCLENBQUM7QUFHMUM7SUFBd0MsOEJBQVk7SUFBcEQ7UUFBQSxxRUFzQkM7UUFuQkcsWUFBTSxHQUFVLEVBQUUsQ0FBQyxDQUFBLFVBQVU7O0lBbUJqQyxDQUFDO0lBbEJHLHdCQUF3QjtJQUN4QixNQUFNO0lBQ04sMkJBQU0sR0FBTixjQUFXLENBQUM7SUFDWixNQUFNO0lBQ04sMEJBQUssR0FBTDtJQUVBLENBQUM7SUFDRCxRQUFRO0lBQ1IsMkJBQU0sR0FBTixVQUFRLEVBQUU7UUFFTixZQUFZO1FBQ1osSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLElBQUksSUFBSSxDQUFDLE1BQU0sR0FBRyxFQUFFLENBQUM7UUFDaEMsMkJBQTJCO1FBQzNCLElBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQyxHQUFHLEVBQ3RCO1lBQ0ksSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDO1NBQ25CO0lBQ0wsQ0FBQztJQWxCRDtRQURDLFFBQVE7OENBQ1U7SUFIRixVQUFVO1FBRDlCLE9BQU87T0FDYSxVQUFVLENBc0I5QjtJQUFELGlCQUFDO0NBdEJELEFBc0JDLENBdEJ1QyxFQUFFLENBQUMsU0FBUyxHQXNCbkQ7a0JBdEJvQixVQUFVIiwiZmlsZSI6IiIsInNvdXJjZVJvb3QiOiIvIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3Qge2NjY2xhc3MsIHByb3BlcnR5fSA9IGNjLl9kZWNvcmF0b3I7XG5cbkBjY2NsYXNzXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBCYWNrZ3JvdW5kIGV4dGVuZHMgY2MuQ29tcG9uZW50IHtcblxuICAgIEBwcm9wZXJ0eVxuICAgIHlfdmVsbzpudW1iZXIgPSA0MDsvL+eUu+W4g+W+gOS4i+e/u+eahOmAn+W6plxuICAgIC8vIExJRkUtQ1lDTEUgQ0FMTEJBQ0tTOlxuICAgIC8v6KKr5Yqg6L295pe2XG4gICAgb25Mb2FkICgpIHt9XG4gICAgLy/ooqvliqDovb3lkI5cbiAgICBzdGFydCAoKSB7XG5cbiAgICB9XG4gICAgLy/mr4/kuIDluKfmm7TmlrDml7ZcbiAgICB1cGRhdGUgKGR0KSBcbiAgICB7XG4gICAgICAgIC8v5a6a5LmJ6IOM5pmv5b6A5LiL57+755qE6YCf546HXG4gICAgICAgIHRoaXMubm9kZS55IC09IHRoaXMueV92ZWxvICogZHQ7XG4gICAgICAgIC8v5aaC5p6c5b6A5LiL57+755qE5aSq5aSa5LqG77yM5bCx5pCs5Zue5p2l77yM5L+d6K+B55yL6LW35p2l6L+e6LSv55qE5pWI5p6cXG4gICAgICAgIGlmKHRoaXMubm9kZS55IDw9IC04NTIpXG4gICAgICAgIHtcbiAgICAgICAgICAgIHRoaXMubm9kZS55ID0gMDtcbiAgICAgICAgfVxuICAgIH1cbn1cbiJdfQ==
+//------QC-SOURCE-SPLIT------
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/Button.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '55e3fMGMCxOHalmCRKDP5Ex', 'Button');
+// resources/script/Button.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+//设置类名，继承游戏设定类
+var Button = /** @class */ (function (_super) {
+    __extends(Button, _super);
+    function Button() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        //感觉把prefab预制件放在这里不是很合理，因为在继承到别的类时，这些元素也会一同继承过去，还需要再拉几次给继承类的property设定指向对象会很麻烦
+        _this.PreTitle = null;
+        _this.PreButton = null;
+        _this.PrePlayer = null;
+        _this.PreEnemyManager = null;
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    Button.prototype.onLoad = function () {
+        var self = this;
+        //设定函数操作
+        var func1 = function (event) {
+            //加载该生成的
+            var nodePlayer = cc.instantiate(self.PrePlayer);
+            var nodeEnemyManager = cc.instantiate(self.PreEnemyManager);
+            //锚定父对象和该删的对象
+            var Parent = cc.find("Canvas/Main Camera");
+            var Title = cc.find("Canvas/Main Camera/Title");
+            //关系绑定
+            nodePlayer.setParent(Parent);
+            nodeEnemyManager.setParent(Parent);
+            //删除title
+            Title.destroy();
+            self.node.destroy();
+        };
+        this.node.on(cc.Node.EventType.MOUSE_UP, func1);
+    };
+    Button.prototype.start = function () {
+    };
+    Button.prototype.update = function (dt) { };
+    Button.prototype.onDestroy = function () {
+        //这里可能有问题
+        this.node.off(cc.Node.EventType.MOUSE_UP);
+    };
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreTitle", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreButton", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PrePlayer", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreEnemyManager", void 0);
+    Button = __decorate([
+        ccclass
+    ], Button);
+    return Button;
+}(cc.Component));
+exports.default = Button;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEJ1dHRvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFFTSxJQUFBLEtBQXNCLEVBQUUsQ0FBQyxVQUFVLEVBQWxDLE9BQU8sYUFBQSxFQUFFLFFBQVEsY0FBaUIsQ0FBQztBQUMxQyxjQUFjO0FBRWQ7SUFBb0MsMEJBQVk7SUFBaEQ7UUFBQSxxRUE4Q0M7UUE3Q0csOEVBQThFO1FBRTlFLGNBQVEsR0FBYSxJQUFJLENBQUM7UUFHMUIsZUFBUyxHQUFhLElBQUksQ0FBQztRQUczQixlQUFTLEdBQWEsSUFBSSxDQUFDO1FBRzNCLHFCQUFlLEdBQWEsSUFBSSxDQUFDOztJQWtDckMsQ0FBQztJQWpDRyx3QkFBd0I7SUFFeEIsdUJBQU0sR0FBTjtRQUVJLElBQUksSUFBSSxHQUFHLElBQUksQ0FBQztRQUNoQixRQUFRO1FBQ1IsSUFBSSxLQUFLLEdBQUcsVUFBUyxLQUFLO1lBQ3RCLFFBQVE7WUFDUixJQUFJLFVBQVUsR0FBRyxFQUFFLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQztZQUNoRCxJQUFJLGdCQUFnQixHQUFHLEVBQUUsQ0FBQyxXQUFXLENBQUMsSUFBSSxDQUFDLGVBQWUsQ0FBQyxDQUFDO1lBQzVELGFBQWE7WUFDYixJQUFJLE1BQU0sR0FBRyxFQUFFLENBQUMsSUFBSSxDQUFDLG9CQUFvQixDQUFDLENBQUM7WUFDM0MsSUFBSSxLQUFLLEdBQUcsRUFBRSxDQUFDLElBQUksQ0FBQywwQkFBMEIsQ0FBQyxDQUFDO1lBQ2hELE1BQU07WUFDTixVQUFVLENBQUMsU0FBUyxDQUFDLE1BQU0sQ0FBQyxDQUFDO1lBQzdCLGdCQUFnQixDQUFDLFNBQVMsQ0FBQyxNQUFNLENBQUMsQ0FBQztZQUNuQyxTQUFTO1lBQ1QsS0FBSyxDQUFDLE9BQU8sRUFBRSxDQUFDO1lBQ2hCLElBQUksQ0FBQyxJQUFJLENBQUMsT0FBTyxFQUFFLENBQUM7UUFFeEIsQ0FBQyxDQUFBO1FBQ0QsSUFBSSxDQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsRUFBRSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFDLEtBQUssQ0FBQyxDQUFDO0lBQ25ELENBQUM7SUFFRCxzQkFBSyxHQUFMO0lBRUEsQ0FBQztJQUVELHVCQUFNLEdBQU4sVUFBUSxFQUFFLElBQUcsQ0FBQztJQUNkLDBCQUFTLEdBQVQ7UUFDSSxTQUFTO1FBQ1QsSUFBSSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUM7SUFDOUMsQ0FBQztJQTFDRDtRQURDLFFBQVEsQ0FBQyxFQUFFLENBQUMsTUFBTSxDQUFDOzRDQUNNO0lBRzFCO1FBREMsUUFBUSxDQUFDLEVBQUUsQ0FBQyxNQUFNLENBQUM7NkNBQ087SUFHM0I7UUFEQyxRQUFRLENBQUMsRUFBRSxDQUFDLE1BQU0sQ0FBQzs2Q0FDTztJQUczQjtRQURDLFFBQVEsQ0FBQyxFQUFFLENBQUMsTUFBTSxDQUFDO21EQUNhO0lBWmhCLE1BQU07UUFEMUIsT0FBTztPQUNhLE1BQU0sQ0E4QzFCO0lBQUQsYUFBQztDQTlDRCxBQThDQyxDQTlDbUMsRUFBRSxDQUFDLFNBQVMsR0E4Qy9DO2tCQTlDb0IsTUFBTSIsImZpbGUiOiIiLCJzb3VyY2VSb290IjoiLyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBHYW1lU2V0dGluZyBmcm9tIFwiLi9HYW1lXCI7XG5cbmNvbnN0IHtjY2NsYXNzLCBwcm9wZXJ0eX0gPSBjYy5fZGVjb3JhdG9yO1xuLy/orr7nva7nsbvlkI3vvIznu6fmib/muLjmiI/orr7lrprnsbtcbkBjY2NsYXNzXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBCdXR0b24gZXh0ZW5kcyBjYy5Db21wb25lbnQge1xuICAgIC8v5oSf6KeJ5oqKcHJlZmFi6aKE5Yi25Lu25pS+5Zyo6L+Z6YeM5LiN5piv5b6I5ZCI55CG77yM5Zug5Li65Zyo57un5om/5Yiw5Yir55qE57G75pe277yM6L+Z5Lqb5YWD57Sg5Lmf5Lya5LiA5ZCM57un5om/6L+H5Y6777yM6L+Y6ZyA6KaB5YaN5ouJ5Yeg5qyh57uZ57un5om/57G755qEcHJvcGVydHnorr7lrprmjIflkJHlr7nosaHkvJrlvojpurvng6ZcbiAgICBAcHJvcGVydHkoY2MuUHJlZmFiKVxuICAgIFByZVRpdGxlOmNjLlByZWZhYiA9IG51bGw7XG4gICAgXG4gICAgQHByb3BlcnR5KGNjLlByZWZhYilcbiAgICBQcmVCdXR0b246Y2MuUHJlZmFiID0gbnVsbDtcbiAgICBcbiAgICBAcHJvcGVydHkoY2MuUHJlZmFiKVxuICAgIFByZVBsYXllcjpjYy5QcmVmYWIgPSBudWxsO1xuXG4gICAgQHByb3BlcnR5KGNjLlByZWZhYilcbiAgICBQcmVFbmVteU1hbmFnZXI6Y2MuUHJlZmFiID0gbnVsbDtcbiAgICAvLyBMSUZFLUNZQ0xFIENBTExCQUNLUzpcblxuICAgIG9uTG9hZCAoKSBcbiAgICB7XG4gICAgICAgIGxldCBzZWxmID0gdGhpcztcbiAgICAgICAgLy/orr7lrprlh73mlbDmk43kvZxcbiAgICAgICAgbGV0IGZ1bmMxID0gZnVuY3Rpb24oZXZlbnQpIHtcbiAgICAgICAgICAgIC8v5Yqg6L296K+l55Sf5oiQ55qEXG4gICAgICAgICAgICBsZXQgbm9kZVBsYXllciA9IGNjLmluc3RhbnRpYXRlKHNlbGYuUHJlUGxheWVyKTtcbiAgICAgICAgICAgIGxldCBub2RlRW5lbXlNYW5hZ2VyID0gY2MuaW5zdGFudGlhdGUoc2VsZi5QcmVFbmVteU1hbmFnZXIpO1xuICAgICAgICAgICAgLy/plJrlrprniLblr7nosaHlkozor6XliKDnmoTlr7nosaFcbiAgICAgICAgICAgIGxldCBQYXJlbnQgPSBjYy5maW5kKFwiQ2FudmFzL01haW4gQ2FtZXJhXCIpO1xuICAgICAgICAgICAgbGV0IFRpdGxlID0gY2MuZmluZChcIkNhbnZhcy9NYWluIENhbWVyYS9UaXRsZVwiKTtcbiAgICAgICAgICAgIC8v5YWz57O757uR5a6aXG4gICAgICAgICAgICBub2RlUGxheWVyLnNldFBhcmVudChQYXJlbnQpO1xuICAgICAgICAgICAgbm9kZUVuZW15TWFuYWdlci5zZXRQYXJlbnQoUGFyZW50KTtcbiAgICAgICAgICAgIC8v5Yig6ZmkdGl0bGVcbiAgICAgICAgICAgIFRpdGxlLmRlc3Ryb3koKTtcbiAgICAgICAgICAgIHNlbGYubm9kZS5kZXN0cm95KCk7XG5cbiAgICAgICAgfVxuICAgICAgICB0aGlzLm5vZGUub24oY2MuTm9kZS5FdmVudFR5cGUuTU9VU0VfVVAsZnVuYzEpO1xuICAgIH1cblxuICAgIHN0YXJ0ICgpIHtcblxuICAgIH1cblxuICAgIHVwZGF0ZSAoZHQpIHt9XG4gICAgb25EZXN0cm95KCkge1xuICAgICAgICAvL+i/memHjOWPr+iDveaciemXrumimFxuICAgICAgICB0aGlzLm5vZGUub2ZmKGNjLk5vZGUuRXZlbnRUeXBlLk1PVVNFX1VQKTtcbiAgICB9XG59XG4iXX0=
+//------QC-SOURCE-SPLIT------
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/BulletControl.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '3697aF1vm9H9pibwKoWBr+n', 'BulletControl');
+// resources/script/BulletControl.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// 调用EnemyManager需要import文件
+var EnemyControl_1 = require("./EnemyControl");
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var Bullet = /** @class */ (function (_super) {
+    __extends(Bullet, _super);
+    //编写类名
+    function Bullet() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.velo_y = 200;
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    Bullet.prototype.onLoad = function () {
+    };
+    Bullet.prototype.start = function () {
+    };
+    Bullet.prototype.update = function (dt) {
+        this.node.y += this.velo_y * dt;
+        //销毁
+        if (this.node.y > 440) {
+            this.node.destroy();
+        }
+    };
+    Bullet.prototype.onCollisionEnter = function (other) {
+        if (other.tag == 1) {
+            other.getComponent(EnemyControl_1.default).die();
+        }
+    };
+    __decorate([
+        property
+    ], Bullet.prototype, "velo_y", void 0);
+    Bullet = __decorate([
+        ccclass
+        //编写类名
+    ], Bullet);
+    return Bullet;
+}(cc.Component));
+exports.default = Bullet;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEJ1bGxldENvbnRyb2wudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsMkJBQTJCO0FBQzNCLCtDQUEwQztBQUVwQyxJQUFBLEtBQXNCLEVBQUUsQ0FBQyxVQUFVLEVBQWxDLE9BQU8sYUFBQSxFQUFFLFFBQVEsY0FBaUIsQ0FBQztBQUkxQztJQUFvQywwQkFBWTtJQURoRCxNQUFNO0lBQ047UUFBQSxxRUFpQ0M7UUE5QkcsWUFBTSxHQUFVLEdBQUcsQ0FBQzs7SUE4QnhCLENBQUM7SUE1Qkcsd0JBQXdCO0lBRXhCLHVCQUFNLEdBQU47SUFHQSxDQUFDO0lBRUQsc0JBQUssR0FBTDtJQUVBLENBQUM7SUFFRCx1QkFBTSxHQUFOLFVBQVEsRUFBRTtRQUVOLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQyxJQUFJLElBQUksQ0FBQyxNQUFNLEdBQUcsRUFBRSxDQUFDO1FBQ2hDLElBQUk7UUFDSixJQUFHLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQyxHQUFHLEdBQUcsRUFDcEI7WUFDSSxJQUFJLENBQUMsSUFBSSxDQUFDLE9BQU8sRUFBRSxDQUFDO1NBQ3ZCO0lBQ0wsQ0FBQztJQUVELGlDQUFnQixHQUFoQixVQUFpQixLQUFLO1FBRWxCLElBQUcsS0FBSyxDQUFDLEdBQUcsSUFBSSxDQUFDLEVBQ2pCO1lBQ0ksS0FBSyxDQUFDLFlBQVksQ0FBQyxzQkFBWSxDQUFDLENBQUMsR0FBRyxFQUFFLENBQUM7U0FDMUM7SUFDTCxDQUFDO0lBN0JEO1FBREMsUUFBUTswQ0FDVztJQUhILE1BQU07UUFGMUIsT0FBTztRQUNSLE1BQU07T0FDZSxNQUFNLENBaUMxQjtJQUFELGFBQUM7Q0FqQ0QsQUFpQ0MsQ0FqQ21DLEVBQUUsQ0FBQyxTQUFTLEdBaUMvQztrQkFqQ29CLE1BQU0iLCJmaWxlIjoiIiwic291cmNlUm9vdCI6Ii8iLCJzb3VyY2VzQ29udGVudCI6WyIvLyDosIPnlKhFbmVteU1hbmFnZXLpnIDopoFpbXBvcnTmlofku7ZcbmltcG9ydCBFbmVteUNvbnRyb2wgZnJvbSBcIi4vRW5lbXlDb250cm9sXCI7XG5cbmNvbnN0IHtjY2NsYXNzLCBwcm9wZXJ0eX0gPSBjYy5fZGVjb3JhdG9yO1xuXG5AY2NjbGFzc1xuLy/nvJblhpnnsbvlkI1cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEJ1bGxldCBleHRlbmRzIGNjLkNvbXBvbmVudCB7XG5cbiAgICBAcHJvcGVydHlcbiAgICB2ZWxvX3k6bnVtYmVyID0gMjAwO1xuXG4gICAgLy8gTElGRS1DWUNMRSBDQUxMQkFDS1M6XG5cbiAgICBvbkxvYWQgKCkgXG4gICAge1xuICAgICAgICBcbiAgICB9XG5cbiAgICBzdGFydCAoKSB7XG5cbiAgICB9XG5cbiAgICB1cGRhdGUgKGR0KSBcbiAgICB7XG4gICAgICAgIHRoaXMubm9kZS55ICs9IHRoaXMudmVsb195ICogZHQ7XG4gICAgICAgIC8v6ZSA5q+BXG4gICAgICAgIGlmKHRoaXMubm9kZS55ID4gNDQwKVxuICAgICAgICB7XG4gICAgICAgICAgICB0aGlzLm5vZGUuZGVzdHJveSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgb25Db2xsaXNpb25FbnRlcihvdGhlcilcbiAgICB7XG4gICAgICAgIGlmKG90aGVyLnRhZyA9PSAxIClcbiAgICAgICAge1xuICAgICAgICAgICAgb3RoZXIuZ2V0Q29tcG9uZW50KEVuZW15Q29udHJvbCkuZGllKCk7XG4gICAgICAgIH1cbiAgICB9XG59XG4iXX0=
+//------QC-SOURCE-SPLIT------

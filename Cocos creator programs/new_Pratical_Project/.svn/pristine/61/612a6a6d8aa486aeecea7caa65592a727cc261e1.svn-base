@@ -1,0 +1,59 @@
+"use strict";
+cc._RF.push(module, '66faaijs8FJWq06sY3lmKO0', 'Background');
+// resources/script/Background.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var Background = /** @class */ (function (_super) {
+    __extends(Background, _super);
+    function Background() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.y_velo = 40; //画布往下翻的速度
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    //被加载时
+    Background.prototype.onLoad = function () { };
+    //被加载后
+    Background.prototype.start = function () {
+    };
+    //每一帧更新时
+    Background.prototype.update = function (dt) {
+        //定义背景往下翻的速率
+        this.node.y -= this.y_velo * dt;
+        //如果往下翻的太多了，就搬回来，保证看起来连贯的效果
+        if (this.node.y <= -852) {
+            this.node.y = 0;
+        }
+    };
+    __decorate([
+        property
+    ], Background.prototype, "y_velo", void 0);
+    Background = __decorate([
+        ccclass
+    ], Background);
+    return Background;
+}(cc.Component));
+exports.default = Background;
+
+cc._RF.pop();

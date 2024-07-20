@@ -1,0 +1,85 @@
+"use strict";
+cc._RF.push(module, '55e3fMGMCxOHalmCRKDP5Ex', 'Button');
+// resources/script/Button.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+//设置类名，继承游戏设定类
+var Button = /** @class */ (function (_super) {
+    __extends(Button, _super);
+    function Button() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        //感觉把prefab预制件放在这里不是很合理，因为在继承到别的类时，这些元素也会一同继承过去，还需要再拉几次给继承类的property设定指向对象会很麻烦
+        _this.PreTitle = null;
+        _this.PreButton = null;
+        _this.PrePlayer = null;
+        _this.PreEnemyManager = null;
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    Button.prototype.onLoad = function () {
+        var self = this;
+        //设定函数操作
+        var func1 = function (event) {
+            //加载该生成的
+            var nodePlayer = cc.instantiate(self.PrePlayer);
+            var nodeEnemyManager = cc.instantiate(self.PreEnemyManager);
+            //锚定父对象和该删的对象
+            var Parent = cc.find("Canvas/Main Camera");
+            var Title = cc.find("Canvas/Main Camera/Title");
+            //关系绑定
+            nodePlayer.setParent(Parent);
+            nodeEnemyManager.setParent(Parent);
+            //删除title
+            Title.destroy();
+            self.node.destroy();
+        };
+        this.node.on(cc.Node.EventType.MOUSE_UP, func1);
+    };
+    Button.prototype.start = function () {
+    };
+    Button.prototype.update = function (dt) { };
+    Button.prototype.onDestroy = function () {
+        //这里可能有问题
+        this.node.off(cc.Node.EventType.MOUSE_UP);
+    };
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreTitle", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreButton", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PrePlayer", void 0);
+    __decorate([
+        property(cc.Prefab)
+    ], Button.prototype, "PreEnemyManager", void 0);
+    Button = __decorate([
+        ccclass
+    ], Button);
+    return Button;
+}(cc.Component));
+exports.default = Button;
+
+cc._RF.pop();

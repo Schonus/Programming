@@ -1,0 +1,87 @@
+
+                (function() {
+                    var nodeEnv = typeof require !== 'undefined' && typeof process !== 'undefined';
+                    var __module = nodeEnv ? module : {exports:{}};
+                    var __filename = 'preview-scripts/assets/resources/script/BulletControl.js';
+                    var __require = nodeEnv ? function (request) {
+                        return cc.require(request);
+                    } : function (request) {
+                        return __quick_compile_project__.require(request, __filename);
+                    };
+                    function __define (exports, require, module) {
+                        if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}"use strict";
+cc._RF.push(module, '3697aF1vm9H9pibwKoWBr+n', 'BulletControl');
+// resources/script/BulletControl.ts
+
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// 调用EnemyManager需要import文件
+var EnemyControl_1 = require("./EnemyControl");
+var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var Bullet = /** @class */ (function (_super) {
+    __extends(Bullet, _super);
+    //编写类名
+    function Bullet() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.velo_y = 200;
+        return _this;
+    }
+    // LIFE-CYCLE CALLBACKS:
+    Bullet.prototype.onLoad = function () {
+    };
+    Bullet.prototype.start = function () {
+    };
+    Bullet.prototype.update = function (dt) {
+        this.node.y += this.velo_y * dt;
+        //销毁
+        if (this.node.y > 440) {
+            this.node.destroy();
+        }
+    };
+    Bullet.prototype.onCollisionEnter = function (other) {
+        if (other.tag == 1) {
+            other.getComponent(EnemyControl_1.default).die();
+        }
+    };
+    __decorate([
+        property
+    ], Bullet.prototype, "velo_y", void 0);
+    Bullet = __decorate([
+        ccclass
+        //编写类名
+    ], Bullet);
+    return Bullet;
+}(cc.Component));
+exports.default = Bullet;
+
+cc._RF.pop();
+                    }
+                    if (nodeEnv) {
+                        __define(__module.exports, __require, __module);
+                    }
+                    else {
+                        __quick_compile_project__.registerModuleFunc(__filename, function () {
+                            __define(__module.exports, __require, __module);
+                        });
+                    }
+                })();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0c1xccmVzb3VyY2VzXFxzY3JpcHRcXEJ1bGxldENvbnRyb2wudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsMkJBQTJCO0FBQzNCLCtDQUEwQztBQUVwQyxJQUFBLEtBQXNCLEVBQUUsQ0FBQyxVQUFVLEVBQWxDLE9BQU8sYUFBQSxFQUFFLFFBQVEsY0FBaUIsQ0FBQztBQUkxQztJQUFvQywwQkFBWTtJQURoRCxNQUFNO0lBQ047UUFBQSxxRUFpQ0M7UUE5QkcsWUFBTSxHQUFVLEdBQUcsQ0FBQzs7SUE4QnhCLENBQUM7SUE1Qkcsd0JBQXdCO0lBRXhCLHVCQUFNLEdBQU47SUFHQSxDQUFDO0lBRUQsc0JBQUssR0FBTDtJQUVBLENBQUM7SUFFRCx1QkFBTSxHQUFOLFVBQVEsRUFBRTtRQUVOLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQyxJQUFJLElBQUksQ0FBQyxNQUFNLEdBQUcsRUFBRSxDQUFDO1FBQ2hDLElBQUk7UUFDSixJQUFHLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQyxHQUFHLEdBQUcsRUFDcEI7WUFDSSxJQUFJLENBQUMsSUFBSSxDQUFDLE9BQU8sRUFBRSxDQUFDO1NBQ3ZCO0lBQ0wsQ0FBQztJQUVELGlDQUFnQixHQUFoQixVQUFpQixLQUFLO1FBRWxCLElBQUcsS0FBSyxDQUFDLEdBQUcsSUFBSSxDQUFDLEVBQ2pCO1lBQ0ksS0FBSyxDQUFDLFlBQVksQ0FBQyxzQkFBWSxDQUFDLENBQUMsR0FBRyxFQUFFLENBQUM7U0FDMUM7SUFDTCxDQUFDO0lBN0JEO1FBREMsUUFBUTswQ0FDVztJQUhILE1BQU07UUFGMUIsT0FBTztRQUNSLE1BQU07T0FDZSxNQUFNLENBaUMxQjtJQUFELGFBQUM7Q0FqQ0QsQUFpQ0MsQ0FqQ21DLEVBQUUsQ0FBQyxTQUFTLEdBaUMvQztrQkFqQ29CLE1BQU0iLCJmaWxlIjoiIiwic291cmNlUm9vdCI6Ii8iLCJzb3VyY2VzQ29udGVudCI6WyIvLyDosIPnlKhFbmVteU1hbmFnZXLpnIDopoFpbXBvcnTmlofku7ZcbmltcG9ydCBFbmVteUNvbnRyb2wgZnJvbSBcIi4vRW5lbXlDb250cm9sXCI7XG5cbmNvbnN0IHtjY2NsYXNzLCBwcm9wZXJ0eX0gPSBjYy5fZGVjb3JhdG9yO1xuXG5AY2NjbGFzc1xuLy/nvJblhpnnsbvlkI1cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEJ1bGxldCBleHRlbmRzIGNjLkNvbXBvbmVudCB7XG5cbiAgICBAcHJvcGVydHlcbiAgICB2ZWxvX3k6bnVtYmVyID0gMjAwO1xuXG4gICAgLy8gTElGRS1DWUNMRSBDQUxMQkFDS1M6XG5cbiAgICBvbkxvYWQgKCkgXG4gICAge1xuICAgICAgICBcbiAgICB9XG5cbiAgICBzdGFydCAoKSB7XG5cbiAgICB9XG5cbiAgICB1cGRhdGUgKGR0KSBcbiAgICB7XG4gICAgICAgIHRoaXMubm9kZS55ICs9IHRoaXMudmVsb195ICogZHQ7XG4gICAgICAgIC8v6ZSA5q+BXG4gICAgICAgIGlmKHRoaXMubm9kZS55ID4gNDQwKVxuICAgICAgICB7XG4gICAgICAgICAgICB0aGlzLm5vZGUuZGVzdHJveSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgb25Db2xsaXNpb25FbnRlcihvdGhlcilcbiAgICB7XG4gICAgICAgIGlmKG90aGVyLnRhZyA9PSAxIClcbiAgICAgICAge1xuICAgICAgICAgICAgb3RoZXIuZ2V0Q29tcG9uZW50KEVuZW15Q29udHJvbCkuZGllKCk7XG4gICAgICAgIH1cbiAgICB9XG59XG4iXX0=

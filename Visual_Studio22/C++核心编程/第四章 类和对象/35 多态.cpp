@@ -8,7 +8,7 @@
 //{
 //public:
 //    //虚函数
-//    virtual void speak()
+//    void speak()
 //    {
 //        cout << "动物在说话！" << endl;
 //    }
