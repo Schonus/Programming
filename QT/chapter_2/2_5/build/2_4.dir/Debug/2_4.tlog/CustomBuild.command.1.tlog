@@ -1,0 +1,22 @@
+^D:\PROGRAMMING\QT\CHAPTER_2\2_5\BUILD\CMAKEFILES\C2EF272156236F109528ABA13158A83F\AUTOUIC_(CONFIG).STAMP.RULE
+setlocal
+cd D:\Programming\QT\chapter_2\2_5\build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PROGRAMMING\QT\CHAPTER_2\2_5\RESOURCE\CMAKELISTS.TXT
+setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Programming/QT/chapter_2/2_5/resource -BD:/Programming/QT/chapter_2/2_5/build --check-stamp-file D:/Programming/QT/chapter_2/2_5/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

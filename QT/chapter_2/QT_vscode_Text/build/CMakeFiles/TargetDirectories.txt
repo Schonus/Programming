@@ -1,0 +1,5 @@
+D:/Programming/QT/chapter_2/QT_vscode_Text/build/CMakeFiles/QT_Test.dir
+D:/Programming/QT/chapter_2/QT_vscode_Text/build/CMakeFiles/edit_cache.dir
+D:/Programming/QT/chapter_2/QT_vscode_Text/build/CMakeFiles/rebuild_cache.dir
+D:/Programming/QT/chapter_2/QT_vscode_Text/build/CMakeFiles/QT_Test_autogen_timestamp_deps.dir
+D:/Programming/QT/chapter_2/QT_vscode_Text/build/CMakeFiles/QT_Test_autogen.dir

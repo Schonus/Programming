@@ -1,6 +1,0 @@
-﻿  My_Windows.cpp
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\My_Windows.cpp(20,37): warning C4302: “类型强制转换”: 从“LPSTR”到“WORD”截断
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\My_Windows.cpp(25,44): warning C4302: “类型强制转换”: 从“LPSTR”到“WORD”截断
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\My_Windows.cpp(43,1): warning C4002: 类函数宏的调用“CreateWindowA”参数过多
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\My_Windows.cpp(71): warning C4715: “WndProc”: 不是所有的控件路径都返回值
-  2.4.3.vcxproj -> D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\Debug\2.4.3.exe

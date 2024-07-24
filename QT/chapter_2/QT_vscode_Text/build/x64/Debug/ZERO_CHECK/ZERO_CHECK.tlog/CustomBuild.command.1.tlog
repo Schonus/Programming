@@ -1,0 +1,10 @@
+^D:\PROGRAMMING\QT\CHAPTER_2\QT_VSCODE_TEXT\BUILD\CMAKEFILES\FBCDA9971A37D7C4CF2332B7B781DFA1\GENERATE.STAMP.RULE
+setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Programming/QT/chapter_2/QT_vscode_Text -BD:/Programming/QT/chapter_2/QT_vscode_Text/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Programming/QT/chapter_2/QT_vscode_Text/build/QT_Test.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

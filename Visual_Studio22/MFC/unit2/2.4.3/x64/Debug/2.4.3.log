@@ -1,7 +1,0 @@
-﻿  My_Windows.cpp
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\My_Windows.cpp(21,37): warning C4302: “类型强制转换”: 从“LPWSTR”到“WORD”截断
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\My_Windows.cpp(26,44): warning C4302: “类型强制转换”: 从“LPWSTR”到“WORD”截断
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\My_Windows.cpp(44,1): warning C4002: 类函数宏的调用“CreateWindowW”参数过多
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\My_Windows.cpp(57,15): warning C4244: “return”: 从“WPARAM”转换到“int”，可能丢失数据
-MSVCRTD.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 main，函数 "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 中引用了该符号
-D:\Programming\Visual_Studio22\MFC\unit2\2.4.3\x64\Debug\2.4.3.exe : fatal error LNK1120: 1 个无法解析的外部命令

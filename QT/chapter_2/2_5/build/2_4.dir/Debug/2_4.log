@@ -1,0 +1,8 @@
+﻿  Automatic MOC and UIC for target 2_4
+  1>
+  Building Custom Rule D:/Programming/QT/chapter_2/2_5/resource/CMakeLists.txt
+  mocs_compilation_Debug.cpp
+  main.cpp
+  dialog.cpp
+  正在生成代码...
+  2_4.vcxproj -> D:\Programming\QT\chapter_2\2_5\build\Debug\2_4.exe

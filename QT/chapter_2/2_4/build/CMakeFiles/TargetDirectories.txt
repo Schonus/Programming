@@ -1,0 +1,9 @@
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/2_4.dir
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/edit_cache.dir
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/rebuild_cache.dir
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/list_install_components.dir
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/install.dir
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/install/local.dir
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/install/strip.dir
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/2_4_autogen_timestamp_deps.dir
+D:/Programming/QT/chapter_2/2_4/build/CMakeFiles/2_4_autogen.dir

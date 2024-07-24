@@ -1,0 +1,3 @@
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\QT_Test.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\QT_Test.dir/objects.a @CMakeFiles\QT_Test.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -mwindows -Wl,--whole-archive CMakeFiles\QT_Test.dir/objects.a -Wl,--no-whole-archive -o QT_Test.exe -Wl,--out-implib,libQT_Test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\QT_Test.dir\linkLibs.rsp

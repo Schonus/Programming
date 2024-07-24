@@ -1,0 +1,4 @@
+D:/Programming/QT/chapter_2/2_5/build/CMakeFiles/2_4.dir
+D:/Programming/QT/chapter_2/2_5/build/CMakeFiles/INSTALL.dir
+D:/Programming/QT/chapter_2/2_5/build/CMakeFiles/ALL_BUILD.dir
+D:/Programming/QT/chapter_2/2_5/build/CMakeFiles/ZERO_CHECK.dir
